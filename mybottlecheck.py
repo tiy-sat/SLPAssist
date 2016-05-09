@@ -1,3 +1,4 @@
+import os
 from bottle import route, run, template, response, request
 import json
 
@@ -10,4 +11,4 @@ def index(name="Pardner"):
 
 
 
-run(host='localhost', port=8080)
+run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
