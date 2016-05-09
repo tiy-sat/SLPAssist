@@ -1,1 +1,1 @@
-web: gunicorn mybottlecheck.wsgi --log-file -
+web: python ./mybottlecheck.py
