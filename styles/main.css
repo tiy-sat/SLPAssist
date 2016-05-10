@@ -61,7 +61,57 @@
   width: 100%;
   font-size: 1.4rem; }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
 html {
   font-size: 62.5%; }
+
+body {
+  font-family: "Helvetica", sans-serif;
+  background-color: #ecf0f1; }
+
+a {
+  text-decoration: none; }
+
+header {
+  margin: 0 auto;
+  width: 95%; }
+
+nav {
+  font-size: 0; }
+
+.dashboard__logo {
+  display: block;
+  position: relative;
+  text-align: center; }
+
+.dashboard__logo img {
+  width: 50%; }
+
+.dashboard__nav--newStudent {
+  background-color: #2980ba;
+  color: white;
+  display: inline-block;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 45%; }
+
+.dashboard__nav--settings {
+  background-color: #8caaa8;
+  color: white;
+  display: inline-block;
+  float: right;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 40%; }
 
 /*# sourceMappingURL=main.css.map */
