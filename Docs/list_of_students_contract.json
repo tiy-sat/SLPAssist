@@ -1,0 +1,18 @@
+
+
+# Key List
+('stuFirst', 'stuLast', 'parFirst', 'parLast', 'email', 'dateAdded')
+
+# Sample data
+'[{"dateAdded": "2017-01-01",
+   "parFirst": "Mamma",
+   "email": "mamma.tool@hotmail.com",
+   "stuLast": "Tool",
+   "parLast": "Tool",
+   "stuFirst": "Penny"},
+  {"dateAdded": "2017-01-01",
+   "parFirst": "Mamma",
+   "email": "mamma.tool@gmail.com",
+   "stuLast": "Pool",
+   "parLast": "Pool",
+   "stuFirst": "Jenny"}]'
