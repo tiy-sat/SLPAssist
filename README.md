@@ -1,4 +1,4 @@
-# SPLAssist - Group Week - MVP (minimally viable product)
+# SLPAssist - Group Week - MVP (minimally viable product)
 <ol>
   <li>database to store values</li>
   <li>front page when logged in</li>
