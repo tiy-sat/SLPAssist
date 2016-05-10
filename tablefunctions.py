@@ -1,60 +1,62 @@
 
 from time import strftime
 import psycopg2
+import json
 
 def create_table():
-    conn = psycopg2.connect("dbname=jimturbo user=jimturbo")
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
     cur = conn.cursor()
+    cur.execute("""DROP TABLE IF EXISTS students""")
     cur.execute("""
-    CREATE TABLE student
+    CREATE TABLE students
     (
     ID SERIAL PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    parent VARCHAR(100),
+    stuFirst VARCHAR(50),
+    stuLast VARCHAR(50),
+    parFirst VARCHAR(50),
+    parLast VARCHAR(50),
     email VARCHAR(250),
-    date_added DATE,
-    goal VARCHAR
+    dateAdded DATE
     )
     """)
     conn.commit()
     cur.close()
 
 def delete_table():
-    conn = psycopg2.connect('dbname=jimturbo user=jimturbo')
+    conn = psycopg2.connect('dbname=slpassist user=localuser')
     cur = conn.cursor()
     cur.execute("""
-    DELETE FROM student""")
+    DELETE FROM students""")
     conn.commit()
     cur.close()
 
 def drop_table():
-    conn = psycopg2.connect('dbname=jimturbo user=jimturbo')
+    conn = psycopg2.connect('dbname=slpassist user=localuser')
     cur = conn.cursor()
     cur.execute("""
-    DROP TABLE student""")
+    DROP TABLE students""")
     conn.commit()
     cur.close()
 
 def insert_student(aList):
-    conn = psycopg2.connect("dbname=jimturbo user=jimturbo")
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
     cur = conn.cursor()
     cur.execute("""
-    INSERT INTO student (first_name,
-                         last_name,
-                         parent,
+    INSERT INTO students (stuFirst,
+                         stuLast,
+                         parFirst,
+                         parLast,
                          email,
-                         date_added,
-                         goal)
+                         dateAdded)
           VALUES (%s, %s, %s, %s, %s, %s)""", aList)
     conn.commit()
     cur.close()
     conn.close()
 
 def retrieve_students():
-    conn = psycopg2.connect("dbname=jimturbo user=jimturbo")
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
     cur = conn.cursor()
-    cur.execute("""SELECT * FROM student""")
+    cur.execute("""SELECT * FROM students""")
     data = cur.fetchall()
     conn.commit()
     cur.close()
@@ -65,14 +67,16 @@ def retrieve_students():
     for row in data:
         count = 1
         valDict = {}
-        for i in feildList:
+        for i in keyList:
             valDict[i] = row[count]
             count += 1
-        valDict['date_added'] = valDict['date_added'].strftime('%Y-%m-%d')
+        valDict['dateAdded'] = valDict['dateAdded'].strftime('%Y-%m-%d')
         studentList.append(valDict)
-    return studentList
+    return json.dumps(studentList)
 
-aStudent = ['Penny', 'Tool', 'Mamma Tool',
-            'mamma.tool@hotmail.com', '2017-01-01', 'roll Rs better']
-feildList = ('first_name', 'last_name', 'parent', 'email',
-             'date_added', 'goal')
+# test list
+aStudent = ['Penny', 'Tool', 'Mamma', 'Tool',
+            'mamma.tool@hotmail.com', '2017-01-01']
+# list containing key names
+keyList = ('stuFirst', 'stuLast', 'parFirst', 'parLast', 'email',
+             'dateAdded')
