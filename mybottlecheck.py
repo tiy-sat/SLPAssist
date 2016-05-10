@@ -19,10 +19,12 @@ def index(name="Pardner"):
     return template('<div>Howdy, {{person}}!</div>', person=name)
 
 
+@route('/dashboard.html')
+def serve_home():
+    return static_file('dashboard.html', root='.')
 
-# @route('/dashboard.html')
-# def serve_home():
-#     return static_file('dashboard.html', root='.')
+@route('/add-student.html')
+    return static_file('add-student.html', root='.')
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
