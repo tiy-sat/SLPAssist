@@ -13,11 +13,9 @@ def serve_index():
 def serve_css():
     return static_file('main.css', root='./styles')
 
-@route('/hello')
-@route('/hello/<name>')
-def index(name="Pardner"):
-    return template('<div>Howdy, {{person}}!</div>', person=name)
-
+@route('/assets/SLPAssist-logo.png')
+def serve_assets():
+    return static_file('SLPAssist-logo.png', root='./assets')
 
 @route('/dashboard.html')
 def serve_home():
