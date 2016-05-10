@@ -1,6 +1,7 @@
 import os
 from bottle import route, run, template, response, request, static_file
 import json
+import database_setup
 
 
 @route('/')
@@ -23,5 +24,11 @@ def index(name="Pardner"):
 # def serve_home():
 #     return static_file('dashboard.html', root='.')
 
+if __name__ == '__main__':
+    if not os.environ.get("DATABASE_URL", None):
+        database_setup.delete_database()
+        database_setup.create_database()
 
-run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
+    # Calls to create the tables go here.
+
+    run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
