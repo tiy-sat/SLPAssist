@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/main.css" charset="utf-8">
   </head>
   <body>
-    <header>
+    <header class="dashboard__bottomBorder">
       <a class="dashboard__logo" href="index.html"><img src="assets/SLPAssist-logo.png" alt="SLP Assist logo" /></a>
       <nav class="dashboard__header">
         <a class="dashboard__nav--newStudent" href="#">new student</a>
@@ -14,8 +14,32 @@
       </nav>
     </header>
     <main>
-      <h1>students</h1>
-      
+      <h1 class="dashboard__heading">students</h1>
+
+      <article class="dashboard__student--overview">
+        <h3 class="dashboard__student--name" data-js="student_name">gene wilder</h3>
+
+          <dl class="csslinegraph">
+
+        		<dd class="first"><span class="pi1 i0"><em>3</em></span></dd>
+
+        		<dd><span class="pi1 i1"><em>36</em></span></dd>
+
+        		<dd><span class="pi2 i0"><em>23</em></span></dd>
+
+        		<dd><span class="pi2 last"><em>56</em></span></dd>
+
+    	     </dl>
+
+          <p class="dashboard__student--scoreStatic">
+            <span class="dashboard__student--scoreDynamic" data-js="student_score">2</span>/10
+          </p>
+
+      </article>
+
+
+
+
     </main>
   </body>
   <script type="text/javascript" src="js/bundle.js"></script>
