@@ -18,7 +18,6 @@ def index(name="Pardner"):
     return template('<div>Howdy, {{person}}!</div>', person=name)
 
 
-
 @route('/dashboard.html')
 def serve_home():
     return static_file('dashboard.html', root='.')
