@@ -23,6 +23,7 @@ def serve_home():
     return static_file('dashboard.html', root='.')
 
 @route('/add-student.html')
+def serve_add_student():
     return static_file('add-student.html', root='.')
 
 
