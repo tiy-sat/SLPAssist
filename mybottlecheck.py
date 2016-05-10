@@ -19,9 +19,12 @@ def index(name="Pardner"):
 
 
 
-# @route('/dashboard.html')
-# def serve_home():
-#     return static_file('dashboard.html', root='.')
+@route('/dashboard.html')
+def serve_home():
+    return static_file('dashboard.html', root='.')
+
+@route('/add-student.html')
+    return static_file('add-student.html', root='.')
 
 
 run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
