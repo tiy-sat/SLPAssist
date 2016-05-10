@@ -1,4 +1,4 @@
-# SPLAssist - Group Week - MVP (minimally viable product)
+# SLPAssist - Group Week - MVP (minimally viable product)
 <ol>
   <li>database to store values</li>
   <li>front page when logged in</li>
@@ -40,3 +40,25 @@ Repository for SPLA web app
 - http://sass-lang.com/install
 - http://browserify.org/#install
 - https://github.com/substack/watchify make sure to run npm install
+
+# Heroku Setup
+
+## Get credentials
+
+## Login to Heroku
+
+`$ heroku login`
+
+## Create an instance
+
+Only need to do this once:
+
+```
+heroku create slpassist-dev
+```
+
+## Deploy
+
+```
+$ git push heroku master
+```
