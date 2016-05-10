@@ -4,8 +4,9 @@ import psycopg2
 import json
 
 def create_table():
-    conn = psycopg2.connect("dbname=jimturbo user=jimturbo")
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
     cur = conn.cursor()
+    cur.execute("""DROP TABLE IF EXISTS students""")
     cur.execute("""
     CREATE TABLE students
     (
@@ -22,7 +23,7 @@ def create_table():
     cur.close()
 
 def delete_table():
-    conn = psycopg2.connect('dbname=jimturbo user=jimturbo')
+    conn = psycopg2.connect('dbname=slpassist user=localuser')
     cur = conn.cursor()
     cur.execute("""
     DELETE FROM students""")
@@ -30,7 +31,7 @@ def delete_table():
     cur.close()
 
 def drop_table():
-    conn = psycopg2.connect('dbname=jimturbo user=jimturbo')
+    conn = psycopg2.connect('dbname=slpassist user=localuser')
     cur = conn.cursor()
     cur.execute("""
     DROP TABLE students""")
@@ -38,7 +39,7 @@ def drop_table():
     cur.close()
 
 def insert_student(aList):
-    conn = psycopg2.connect("dbname=jimturbo user=jimturbo")
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
     cur = conn.cursor()
     cur.execute("""
     INSERT INTO students (stuFirst,
@@ -53,7 +54,7 @@ def insert_student(aList):
     conn.close()
 
 def retrieve_students():
-    conn = psycopg2.connect("dbname=jimturbo user=jimturbo")
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
     cur = conn.cursor()
     cur.execute("""SELECT * FROM students""")
     data = cur.fetchall()
