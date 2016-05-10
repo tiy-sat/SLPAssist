@@ -86,11 +86,15 @@ footer {
   position: relative;
   left: 4rem; }
 
+.buttons {
+  margin-bottom: 15rem; }
+
 .login {
   background: gray;
   border: none;
   color: white;
   display: inline;
+  margin-top: 1rem;
   text-align: center;
   font-size: 2rem;
   position: relative;
