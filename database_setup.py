@@ -17,7 +17,33 @@ def get_connection():
             password=url.password,
             host=url.hostname,
             port=url.port)
-
     else:
-        conn = psycopg2.connect("dbname=slpassist user={}".format(localuser))
+        conn = psycopg2.connect(database='slpassist', user=localuser)
+
     return conn
+
+def delete_database():
+    """Delete the local databse. Only run in dev environment."""
+
+    dbname = "slpassist"
+    localuser = getpass.getuser()
+
+    conn = psycopg2.connect(database='postgres', user=localuser)
+    conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+    cur = conn.cursor()
+    cur.execute('DROP DATABASE IF EXISTS ' + dbname)
+    cur.close()
+    conn.close()
+
+def create_database():
+    """Delete the local databse. Only run in dev environment."""
+
+    dbname = "slpassist"
+    localuser = getpass.getuser()
+
+    conn = psycopg2.connect(database='postgres', user=localuser)
+    conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+    cur = conn.cursor()
+    cur.execute('CREATE DATABASE ' + dbname)
+    cur.close()
+    conn.close()
