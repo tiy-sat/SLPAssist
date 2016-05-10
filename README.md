@@ -1,4 +1,4 @@
-# SPLAssist - Group Week - MVP (minimally viable product)
+# SLPAssist - Group Week - MVP (minimally viable product)
 <ol>
   <li>[ ] database to store values</li>
   <li>[ ] front page when logged in</li>
@@ -32,8 +32,8 @@
     </ul>
 </ol>
 
-# SPLAssist
-Repository for SPLA web app
+# SLPAssist
+Repository for SLPAssist web app
 
 ##To start off  make sure you go to use these sources:
 - http://sass-lang.com/install
