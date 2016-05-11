@@ -1,36 +1,23 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require("jquery");
-
-var $enterEmail = ("[data-js='parEmail']");
-var $confirmEmail = ("[data-js='confEmail']");
-var $emailError = ("[data-js='errorMsg']");
-
-
-// confirm that confEmail matches parEmail
-  $("[data-js='confEmail']").change(function(e){
-    console.log($(e.target).val());
-    if ($(e.target).val() != $enterEmail.val()){
-      console.log($enterEmail.val());
-      // $emailError.text = ("Please make sure caregiver email is correct");
-    }
-  //   // else {
-  //   //   $.ajax({
-  //   //
-  //   //   })
-  //   }
-  })
-
-},{"jquery":3}],2:[function(require,module,exports){
-var $ = require("jquery");
-var addStudent = require("addStudent");
+var showStudents = require("showStudents");
 
 $(function(){
   // Code here!
 
-  
+
 })
 
-},{"addStudent":1,"jquery":3}],3:[function(require,module,exports){
+},{"jquery":3,"showStudents":2}],2:[function(require,module,exports){
+var $ = require("jquery");
+
+
+$.getJSON("http://slpassist-dev.herokuapp.com/students", function (){
+  console.log("successful ajax")
+
+})
+
+},{"jquery":3}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
@@ -9874,4 +9861,4 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}]},{},[2]);
+},{}]},{},[1]);
