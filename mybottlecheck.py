@@ -2,6 +2,8 @@ import os
 from bottle import route, run, template, response, request, static_file
 import json
 import database_setup
+import tablefunctions
+
 
 
 
@@ -45,8 +47,15 @@ def images(filename):
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
+
         database_setup.delete_database()
         database_setup.create_database()
+        tablefunctions.create_table()
+
+        #seeds mock student data.
+        astudent = ['Penny', 'Tool', 'Mamma', 'Tool',
+                    'mamma.tool@hotmail.com', '2017-01-01']
+        tablefunctions.insert_student(astudent)
 
     # Calls to create the tables go here.
 
