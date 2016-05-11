@@ -2,6 +2,7 @@ import os
 from bottle import route, run, template, response, request, static_file
 import json
 import database_setup
+import tablefunctions
 
 
 @route('/')
@@ -24,6 +25,15 @@ def serve_home():
 @route('/add-student.html')
 def serve_add_student():
     return static_file('add-student.html', root='.')
+
+@route('/students')
+def serve_retrieve_student():
+    response.content_type = 'application/json; charset=UTF-8'
+    resp_data = tablefunctions.retrieve_students()
+    return json.dumps(resp_data)
+
+run(host='localhost', port=8080)
+
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
