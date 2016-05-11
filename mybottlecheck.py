@@ -27,6 +27,10 @@ def serve_home():
 def serve_add_student():
     return static_file('add-student.html', root='.')
 
+# @code written by Sanketh Katta:
+# http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
+
+#allows dynamic pathing for assets, javascripts, and css files.
 @route('<:re:.*/><filename:re:.*\.js>')
 def javascripts(filename):
     return static_file(filename, root='./js')
@@ -38,8 +42,6 @@ def stylesheets(filename):
 @route('<:re:.*/><filename:re:.*\.(jpg|png|gif|ico)>')
 def images(filename):
     return static_file(filename, root='./assets')
-
-
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
