@@ -1,4 +1,3 @@
-
 from time import strftime
 import psycopg2
 import json
@@ -52,6 +51,19 @@ def insert_student(aList):
     conn.commit()
     cur.close()
     conn.close()
+
+
+def update_score(student_id, score):
+    conn = psycopg2.connect("dbname=slpassist user=localuser")
+    cur = conn.cursor()
+    cur.execute("""
+    UPDATE students
+    set score= %s
+    where id= %s""", (score, student_id))
+    cur.commit()
+    cur.close()
+    conn.close()
+
 
 def retrieve_students():
     conn = psycopg2.connect("dbname=slpassist user=localuser")
