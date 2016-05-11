@@ -127,6 +127,10 @@ nav {
   position: relative;
   width: 33%; }
 
+.error-msg {
+  color: #c03a2b;
+  font-size: 3rem; }
+
 .dashboard__main {
   background-color: #243b4f; }
 
@@ -391,7 +395,8 @@ dl.csslinegraph {
   display: block;
   margin: 0 auto;
   position: relative;
-  width: 70%; }
+  text-align: center;
+  width: 100%; }
 
 .index__header {
   padding-top: 5rem; }
