@@ -144,17 +144,27 @@ nav {
 .dashboard__logo img {
   width: 40%; }
 
-.dashboard__nav--newStudent {
+.dashboard__nav--addStudent {
   background-color: #2980ba;
   color: white;
+  cursor: pointer;
   display: inline-block;
-  font-size: 1.75rem;
+  float: right;
+  font-size: 4rem;
   font-weight: 500;
+  margin-right: 2rem;
+  margin-top: 2rem;
   padding: 0.5rem;
+  padding-left: 2rem;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  width: 45%; }
+  width: 40%; }
+
+.dashboard__nav--addStudent img {
+  padding-left: 1rem;
+  width: 7.5rem;
+  vertical-align: top; }
 
 .dashboard__nav--settings {
   background-color: #8caaa8;
@@ -173,12 +183,12 @@ nav {
   padding-bottom: 2rem; }
 
 .dashboard__heading {
-  border-top: 1px solid rgba(140, 170, 168, 0.5);
-  border-bottom: 1px solid rgba(140, 170, 168, 0.5);
   color: white;
-  display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  display: inline-block;
+  font-size: 5rem;
+  margin-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   text-align: center;
   text-transform: uppercase; }
 
@@ -206,13 +216,54 @@ nav {
   float: right;
   font-size: 3rem;
   font-weight: 700;
-  padding-right: 1rem; }
+  padding-right: 2rem;
+  padding-top: 2rem; }
 
 .dashboard__student--overview {
+  background-color: #243b4f;
   border-bottom: 1px solid rgba(140, 170, 168, 0.5);
   display: block;
   height: 10rem;
   position: relative; }
+
+.dashboard__title {
+  background-color: #3b97d3; }
+
+.dashboard__input {
+  margin: 0 auto;
+  width: 95%; }
+
+.add-student-form {
+  display: block; }
+
+.form__text {
+  color: white;
+  font-size: 5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem; }
+
+.add-form__input {
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  position: relative;
+  width: 100%; }
+
+.submit__add-student {
+  background-color: #2980ba;
+  border: 0;
+  color: #ecf0f1;
+  font-size: 4.5rem;
+  left: 33%;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  position: relative;
+  width: 33%; }
+
+.hide {
+  display: none; }
 
 /*
  *Css Line Graph created by Alen Grakalic
@@ -239,7 +290,8 @@ dl.csslinegraph {
     position: absolute;
     display: block;
     width: 99px;
-    background-image: url(../assets/line_edit_copy.png);
+    height: 100px;
+    background-image: url(../assets/line_illus.png);
     background-repeat: no-repeat;
     text-indent: -8000px; }
     dl.csslinegraph span em {

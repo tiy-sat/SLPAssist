@@ -1,7 +1,6 @@
 // dashboard
 .dashboard__main
   background-color: $navyBlue
-  // height: 100rem
 
 .dashboard__logo
   display: block
@@ -13,17 +12,27 @@
 .dashboard__logo img
   width: 40%
 
-.dashboard__nav--newStudent
+.dashboard__nav--addStudent
   background-color: $primaryBlue
   color: white
+  cursor: pointer
   display: inline-block
-  font-size: 1.75rem
+  float: right
+  font-size: 4rem
   font-weight: 500
+  margin-right: 2rem
+  margin-top: 2rem
   padding: 0.5rem
+  padding-left: 2rem
   position: relative
   text-align: center
   text-transform: uppercase
-  width: 45%
+  width: 40%
+
+.dashboard__nav--addStudent img
+  padding-left: 1rem
+  width: 7.5rem
+  vertical-align: top
 
 .dashboard__nav--settings
   background-color: $gray
@@ -42,12 +51,12 @@
   padding-bottom: 2rem
 
 .dashboard__heading
-  border-top: $dashboard__bottomBorder
-  border-bottom: $dashboard__bottomBorder
   color: white
-  display: block
-  padding-top: 1rem
-  padding-bottom: 1rem
+  display: inline-block
+  font-size: $h1_size
+  margin-left: 2rem
+  padding-top: 2rem
+  padding-bottom: 2rem
   text-align: center
   text-transform: uppercase
 
@@ -76,15 +85,54 @@
   float: right
   font-size: 3rem
   font-weight: 700
-  padding-right: 1rem
+  padding-right: 2rem
+  padding-top: 2rem
 
 .dashboard__student--overview
+  background-color: $navyBlue
   border-bottom: $dashboard__bottomBorder
   display: block
   height: 10rem
   position: relative
 
+.dashboard__title
+  background-color: $secondaryBlue
 
+.dashboard__input
+  margin: 0 auto
+  width: 95%
+
+.add-student-form
+  display: block
+
+.form__text
+  color: white
+  font-size: $subhead_textSize
+  font-weight: 300
+  margin-bottom: .5rem
+
+.add-form__input
+  display: block
+  font-size: 4rem
+  margin-bottom: 2rem
+  padding-left: 1rem
+  position: relative
+  width: 100%
+
+.submit__add-student
+  background-color: $primaryBlue
+  border: 0
+  color: $backgroundColor
+  font-size: 4.5rem
+  left: 33%
+  margin-top: 2rem
+  margin-bottom: 4rem
+  padding: 1rem
+  position: relative
+  width: 33%
+
+.hide
+  display: none
 
 
 
