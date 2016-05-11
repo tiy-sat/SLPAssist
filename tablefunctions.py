@@ -12,12 +12,9 @@ def create_table():
     CREATE TABLE students
     (
     ID SERIAL PRIMARY KEY,
-    stuFirst VARCHAR(50),
-    stuLast VARCHAR(50),
-    parFirst VARCHAR(50),
-    parLast VARCHAR(50),
-    email VARCHAR(250),
-    dateAdded DATE
+    stuName VARCHAR(100),
+    parName VARCHAR(100),
+    score SMALlINT
     )
     """)
     conn.commit()
@@ -43,13 +40,10 @@ def insert_student(aList):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-    INSERT INTO students (stuFirst,
-                         stuLast,
-                         parFirst,
-                         parLast,
-                         email,
-                         dateAdded)
-          VALUES (%s, %s, %s, %s, %s, %s)""", aList)
+    INSERT INTO students(stuName,
+                         parName,
+                         score)
+          VALUES (%s, %s, %s)""", aList)
     conn.commit()
     cur.close()
     conn.close()
@@ -78,6 +72,7 @@ def retrieve_students():
 # test list
 aStudent = ['Penny', 'Tool', 'Mamma', 'Tool',
             'mamma.tool@hotmail.com', '2017-01-01']
+
 # list containing key names
-keyList = ('stuFirst', 'stuLast', 'parFirst', 'parLast', 'email',
+keyList = ('stuName', 'parName', 'email',
              'dateAdded')

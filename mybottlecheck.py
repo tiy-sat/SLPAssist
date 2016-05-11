@@ -59,9 +59,13 @@ if __name__ == '__main__':
         tablefunctions.create_table()
 
         #seeds mock student data.
-        astudent = ['Penny', 'Tool', 'Mamma', 'Tool',
-                    'mamma.tool@hotmail.com', '2017-01-01']
-        tablefunctions.insert_student(astudent)
+        astudent = [['Penny Tool', 'Erica Tool', 5],
+                    ['Jon Yeager', 'Chuck yeager', 3],
+                    ['Laura Smith', 'Sarah Smith', 7],
+                    ['Ted Smosby', 'James smosby', 9]]
+
+        for row in astudent:
+            tablefunctions.insert_student(row)
 
     # Calls to create the tables go here.
 
