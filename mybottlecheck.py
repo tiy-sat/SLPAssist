@@ -17,9 +17,20 @@ def serve_css():
 def serve_assets():
     return static_file('SLPAssist-logo.png', root='./assets')
 
-@route('/dashboard')
+@get('/dashboard')
 def serve_home():
     return static_file('dashboard.html', root='.')
+
+@post('/students')
+def add_students():
+    studentData = requests.json()
+    for item in studentData
+        studentlist = [studentData['stuName'],
+                       studentData['parName'],
+                       studentData['score']
+                       ]
+        tablefunctions.insert_student(studentlist)
+
 
 @route('/dashboard/settings')
 def serve_settings():
