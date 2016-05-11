@@ -41,6 +41,10 @@
 # SPLAssist
 Repository for SPLA web app
 
+## Running Python locally (for AJAX dev)
+- `$ python3 mybottlecheck.py` (will start local instance of python webserver and tell you what URL to see this in chrome, _should_ be *0.0.0.0:5000*)
+- All ajax calls should have a string value of just `/routename` which are listed [here](https://github.com/tiy-sat/SLPAssist/blob/master/mybottlecheck.py#L7) for example `/dashboard`
+
 ##To start off  make sure you go to use these sources:
 - http://sass-lang.com/install
 - http://browserify.org/#install
