@@ -25,7 +25,7 @@ def serve_assets():
 def serve_home():
     return static_file('dashboard.html', root='.')
 
-@post('/dashboard')
+@post('/students')
 def add_students():
     studentData = requests.json()
     for item in studentData
