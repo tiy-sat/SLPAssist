@@ -25,6 +25,10 @@ def serve_assets():
 def serve_home():
     return static_file('dashboard.html', root='.')
 
+@route('/dashboard/settings')
+def serve_settings():
+    return static_file('settings.html', root='.')
+
 @route('/add-student')
 def serve_add_student():
     return static_file('add-student.html', root='.')
@@ -59,4 +63,4 @@ if __name__ == '__main__':
 
     # Calls to create the tables go here.
 
-    run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
+    run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
