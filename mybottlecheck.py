@@ -53,19 +53,19 @@ def images(filename):
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
-
         database_setup.delete_database()
         database_setup.create_database()
-        tablefunctions.create_table()
 
-        #seeds mock student data.
-        astudent = [['Penny Tool', 'Erica Tool', 5],
-                    ['Jon Yeager', 'Chuck yeager', 3],
-                    ['Laura Smith', 'Sarah Smith', 7],
-                    ['Ted Smosby', 'James smosby', 9]]
+    tablefunctions.create_table()
 
-        for row in astudent:
-            tablefunctions.insert_student(row)
+    #seeds mock student data.
+    astudent = [['Penny Tool', 'Erica Tool', 5],
+                ['Jon Yeager', 'Chuck yeager', 3],
+                ['Laura Smith', 'Sarah Smith', 7],
+                ['Ted Smosby', 'James smosby', 9]]
+
+    for row in astudent:
+        tablefunctions.insert_student(row)
 
     # Calls to create the tables go here.
 
