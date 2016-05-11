@@ -194,7 +194,7 @@ nav {
 
 .dashboard__student--name {
   color: white;
-  display: block;
+  display: inline-block;
   font-size: 4rem;
   font-weight: 400;
   padding-top: 2rem;
@@ -204,7 +204,8 @@ nav {
 .dashboard__edit--score {
   color: white;
   font-size: 3rem;
-  float: right; }
+  float: right;
+  margin-right: 1rem; }
 
 .dashboard__student--scoreDynamic {
   color: #c03a2b;
