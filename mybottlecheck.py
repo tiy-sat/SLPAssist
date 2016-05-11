@@ -43,11 +43,13 @@ def javascripts(filename):
 
 @route('<:re:.*/><filename:re:.*\.css>')
 def stylesheets(filename):
-    return static_file(filename, root='.')
+    return static_file(filename, root='./styles')
 
 @route('<:re:.*/><filename:re:.*\.(jpg|png|gif|ico)>')
 def images(filename):
     return static_file(filename, root='./assets')
+
+
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
