@@ -71,7 +71,8 @@ html {
 
 body {
   background-color: #ecf0f1;
-  font-family: "Helvetica", sans-serif; }
+  font-family: "Helvetica", sans-serif;
+  display: inline; }
 
 a {
   text-decoration: none; }
@@ -88,11 +89,6 @@ main {
   height: 100rem;
   font-family: sans-serif; }
 
-body {
-  display: inline;
-  text-align: center;
-  background: #ecf0f1; }
-
 .header-image {
   position: relative;
   width: 33%;
@@ -104,6 +100,7 @@ body {
   text-align: center; }
 
 .add-form-wrapper {
+  background-color: #ecf0f1;
   margin: auto;
   padding: 2rem;
   font-size: 4.5rem; }
@@ -135,6 +132,9 @@ body {
   padding: 1rem;
   position: relative;
   width: 33%; }
+
+.error-msg {
+  color: #c03a2b; }
 
 .dashboard__logo {
   display: block;
@@ -639,10 +639,13 @@ dl.csslinegraph {
   font-weight: 300;
   font-size: 4rem;
   padding-top: 5rem;
-  padding-bottom: 8rem; }
+  padding-bottom: 8rem;
+  text-align: center; }
 
 .index__logo {
-  position: relative; }
+  position: relative;
+  width: 70%;
+  left: 20%; }
 
 .index__header {
   padding-top: 5rem; }
@@ -697,6 +700,7 @@ dl.csslinegraph {
 
 .main {
   background-color: #3b97d3;
-  padding-bottom: 8rem; }
+  padding-bottom: 8rem;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

@@ -13,14 +13,13 @@
     <main class="add-form-wrapper">
       <form class="add-student-form" action="add-student.html" method="post">
         <h3 class="form__text">Student</h3>
-          <input class="add-form__input" type="text" name="student-first-name" value="" placeholder="First Name">
-          <input class="add-form__input" type="text" name="student-last-name" value="" placeholder="Last Name">
+          <input class="add-form__input" data-js="stuName" type="text" name="student-name" value="" placeholder="Full Name">
         <h3 class="form__text">Caregiver</h3>
-          <input class="add-form__input" type="text" name="caregiver-first-name" value="" placeholder="First Name">
-          <input class="add-form__input" type="text" name="caregiver-last-name" value="" placeholder="Last Name">
-          <input class="add-form__input" type="email" name="name" value="" placeholder="Email Address">
-          <input class="add-form__input" type="email" name="name" value="" placeholder="Please Confirm Email Address">
-        <input class="submit__add-student" type="button" name="submit" value="ADD">
+          <input class="add-form__input" data-js="parName" type="text" name="caregiver-name" value="" placeholder="Full Name">
+          <h4 class="error-msg" data-js="errorMsg" ></h4>
+          <input class="add-form__input" data-js="parEmail" type="email" name="name" value="" placeholder="Email Address">
+          <input class="add-form__input" data-js="confEmail" type="email" name="name" value="" placeholder="Please Confirm Email Address">
+        <input class="submit__add-student" data-js="addButton" type="button" name="submit" value="ADD">
       </form>
     </main>
 
