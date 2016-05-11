@@ -49,6 +49,7 @@ def insert_student(aList):
     conn.close()
 
 def retrieve_students():
+    keyList = ('stuName', 'parName', 'score')
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""SELECT * FROM students""")
@@ -57,7 +58,6 @@ def retrieve_students():
     cur.close()
     conn.close()
 
-    print(data)
     studentList = []
     for row in data:
         count = 1
@@ -65,14 +65,9 @@ def retrieve_students():
         for i in keyList:
             valDict[i] = row[count]
             count += 1
-        valDict['dateAdded'] = valDict['dateAdded'].strftime('%Y-%m-%d')
+        # valDict['dateAdded'] = valDict['dateAdded'].strftime('%Y-%m-%d')
         studentList.append(valDict)
-    return json.dumps(studentList)
+    return studentList
 
-# test list
-aStudent = ['Penny', 'Tool', 'Mamma', 'Tool',
-            'mamma.tool@hotmail.com', '2017-01-01']
-
-# list containing key names
-keyList = ('stuName', 'parName', 'email',
-             'dateAdded')
+# test student
+# aStudent = ['Penny Tool', 'Mamma Tool', 8]
