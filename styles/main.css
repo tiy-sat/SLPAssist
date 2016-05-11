@@ -185,28 +185,33 @@ nav {
 .dashboard__student--name {
   color: white;
   display: block;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 400;
-  padding-top: 0.5rem;
-  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-left: 4rem;
   text-transform: capitalize; }
+
+.dashboard__edit--score {
+  color: white;
+  font-size: 3rem;
+  float: right; }
 
 .dashboard__student--scoreDynamic {
   color: #c03a2b;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700; }
 
 .dashboard__student--scoreStatic {
   color: #8caaa8;
   float: right;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   padding-right: 1rem; }
 
 .dashboard__student--overview {
   border-bottom: 1px solid rgba(140, 170, 168, 0.5);
   display: block;
-  height: 15rem;
+  height: 10rem;
   position: relative; }
 
 /*

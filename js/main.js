@@ -1,8 +1,8 @@
 var $ = require("jquery");
-var addStudent = require("addStudent");
+var showStudents = require("showStudents");
 
 $(function(){
   // Code here!
 
-  
+
 })
