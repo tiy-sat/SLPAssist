@@ -39,3 +39,10 @@ Repository for SPLA web app
 - http://sass-lang.com/install
 - http://browserify.org/#install
 - https://github.com/substack/watchify make sure to run npm install
+
+##links for http://slpassist-dev.herokuapp.com
+
+http://slpassist-dev.herokuapp.com/login
+http://slpassist-dev.herokuapp.com/dashboard
+http://slpassist-dev.herokuapp.com/add-student
+http://slpassist-dev.herokuapp.com/dashboard/settings
