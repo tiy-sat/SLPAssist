@@ -11,10 +11,22 @@ $(function(){
 },{"jquery":3,"showStudents":2}],2:[function(require,module,exports){
 var $ = require("jquery");
 
+var $students = $("[data-js='studentListWrapper']");
 
-$.getJSON("http://slpassist-dev.herokuapp.com/students", function (){
-  console.log("successful ajax")
-
+$(function(){
+  $.getJSON("/students", function (dataArray){
+    dataArray.forEach(function(results){
+          $("[data-js='studentListWrapper']").prepend(`
+            <article class="dashboard__student--overview">
+              <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
+              <span class="dashboard__edit--score">&#9997;</span>
+                <p class="dashboard__student--scoreStatic">
+                  <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
+                </p>
+            </article>
+            `)
+    });
+  });
 })
 
 },{"jquery":3}],3:[function(require,module,exports){

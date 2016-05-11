@@ -4,10 +4,6 @@ import json
 import database_setup
 import tablefunctions
 
-
-
-
-
 @route('/')
 @route('/login')
 def serve_index():
@@ -33,6 +29,12 @@ def serve_settings():
 def serve_add_student():
     return static_file('add-student.html', root='.')
 
+@route('/students')
+def serve_retrieve_student():
+    response.content_type = 'application/json; charset=UTF-8'
+    resp_data = tablefunctions.retrieve_students()
+    return json.dumps(resp_data)
+
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
 
@@ -49,23 +51,21 @@ def stylesheets(filename):
 def images(filename):
     return static_file(filename, root='./assets')
 
-
-
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
-
         database_setup.delete_database()
         database_setup.create_database()
-        tablefunctions.create_table()
 
-        #seeds mock student data.
-        astudent = [['Penny Tool', 'Erica Tool', 5],
-                    ['Jon Yeager', 'Chuck yeager', 3],
-                    ['Laura Smith', 'Sarah Smith', 7],
-                    ['Ted Smosby', 'James smosby', 9]]
+    tablefunctions.create_table()
 
-        for row in astudent:
-            tablefunctions.insert_student(row)
+    #seeds mock student data.
+    astudent = [['Penny Tool', 'Erica Tool', 5],
+                ['Jon Yeager', 'Chuck yeager', 3],
+                ['Laura Smith', 'Sarah Smith', 7],
+                ['Ted Smosby', 'James smosby', 9]]
+
+    for row in astudent:
+        tablefunctions.insert_student(row)
 
     # Calls to create the tables go here.
 
