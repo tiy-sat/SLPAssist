@@ -4,6 +4,8 @@ import json
 import database_setup
 
 
+
+
 @route('/')
 @route('/login')
 def serve_index():
@@ -17,13 +19,27 @@ def serve_css():
 def serve_assets():
     return static_file('SLPAssist-logo.png', root='./assets')
 
-@route('/dashboard.html')
+@route('/dashboard')
 def serve_home():
     return static_file('dashboard.html', root='.')
 
-@route('/add-student.html')
+@route('/add-student')
 def serve_add_student():
     return static_file('add-student.html', root='.')
+
+@route('<:re:.*/><filename:re:.*\.js>')
+def javascripts(filename):
+    return static_file(filename, root='./js')
+
+@route('<:re:.*/><filename:re:.*\.css>')
+def stylesheets(filename):
+    return static_file(filename, root='.')
+
+@route('<:re:.*/><filename:re:.*\.(jpg|png|gif|ico)>')
+def images(filename):
+    return static_file(filename, root='./assets')
+
+
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
