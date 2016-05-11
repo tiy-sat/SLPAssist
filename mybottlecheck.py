@@ -24,7 +24,7 @@ def serve_home():
 @post('/students')
 def add_students():
     studentData = requests.json()
-    for item in studentData
+    for item in studentData:
         studentlist = [studentData['stuName'],
                        studentData['parName'],
                        studentData['score']
