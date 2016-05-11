@@ -43,7 +43,7 @@ def insert_student(aList):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-    INSERT INTO students (stuFirst,
+    INSERT INTO students(stuFirst,
                          stuLast,
                          parFirst,
                          parLast,
@@ -78,6 +78,7 @@ def retrieve_students():
 # test list
 aStudent = ['Penny', 'Tool', 'Mamma', 'Tool',
             'mamma.tool@hotmail.com', '2017-01-01']
+
 # list containing key names
 keyList = ('stuFirst', 'stuLast', 'parFirst', 'parLast', 'email',
              'dateAdded')
