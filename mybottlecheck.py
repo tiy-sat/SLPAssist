@@ -1,5 +1,5 @@
 import os
-from bottle import route, run, template, response, request, static_file
+from bottle import route, run, template, response, request, static_file, get, post
 import json
 import database_setup
 import tablefunctions
