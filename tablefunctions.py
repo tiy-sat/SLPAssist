@@ -61,7 +61,7 @@ def update_score(student_id, score):
 
 
 def retrieve_students():
-    keyList = ('stuName', 'parName', 'score')
+    keyList = ('id', 'stuName', 'parName', 'score')
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""SELECT * FROM students""")
@@ -72,11 +72,11 @@ def retrieve_students():
 
     studentList = []
     for row in data:
-        count = 1
+        count = 0
         valDict = {}
         for i in keyList:
             valDict[i] = row[count]
-            count += 1
+            count += 0
         # valDict['dateAdded'] = valDict['dateAdded'].strftime('%Y-%m-%d')
         studentList.append(valDict)
     return studentList
