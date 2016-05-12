@@ -1,45 +1,49 @@
 # SLPAssist - Group Week - MVP (minimally viable product)
-<ol>
-  <li>[ ] database to store values</li>
-  <li>[ ] front page when logged in</li>
-  <li>[ ] login page</li>
-  <li>[ ] front page when not logged in</li>
-  <li>[ ] dashboard</li>
+# MVP
+<ul>
+  <li>Deploy to web</li>
     <ul>
-      <li>[ ] list of students</li>
-      <li>[ ] student info</li>
-        <ol>
-          <li>name</li>
-          <li>graph</li>
-          <li>action</li>
-        </ol>
-    </ul>  
-    <li>[ ] role SLP</li>  
-  <li>[ ] user settings page</li>
-    <ul>
-      <li>[ ] edit SLP profile page</li>
+      <li>Domain name</li>
+      <li>Host site</li>
     </ul>
-  <li>[ ] notification for SLP token login process</li>
-  <li>[ ] student details</li>
+  <li>SLP role</li>
+  <li>Database</li>
+  <li>Dashboard</li>
     <ul>
-      <li>[ ] capturing student goal data</li>
-      <li>[ ] graduate student</li>
+      <li>List of students</li>
     </ul>
-  <li>[ ] deploy to web</li>
+  <li>Student</li>
+  <li>Name</li>
+  <li>Single score</li>
     <ul>
-      <li>[x] domain name</li>
-      <li>[x] host</li>
+      <li>Add student  - accessed on Dashboard</li>
     </ul>
-    <li>[ ] License information</li>
-      <ul>
-        <li>[ ] Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
-        <li>[ ] psycopg2: http://initd.org/psycopg/license/</li>
-        <li>[ ] bottle: http://bottlepy.org/docs/dev/index.html</li>
-      </ul>
-</ol>
+  <li>Student name</li>
+  <li>Initial score</li>
+    <ul>
+      <li>Edit score modal - triggered by button in student area</li>
+    </ul>
+</ul>
+# Stretch
+<ul>
+  <li>SLP login</li>
+    <ul>
+      <li>Login page</li>
+      <li>Token login (be specific if this is taken on)</li>
+    </ul>
+  <li>Search student</li>
+</ul>
 
-# SPLAssist
-Repository for SPLA web app
+<ul>
+  <li>[ ] License information</li>
+    <ul>
+      <li>[ ] Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
+      <li>[ ] psycopg2: http://initd.org/psycopg/license/</li>
+      <li>[ ] bottle: http://bottlepy.org/docs/dev/index.html</li>
+    </ul>
+</ul>
+
+
 
 ## Running Python locally (for AJAX dev)
 - `$ python3 mybottlecheck.py` (will start local instance of python webserver and tell you what URL to see this in chrome, _should_ be *0.0.0.0:5000*)
