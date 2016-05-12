@@ -26,7 +26,7 @@ def add_students():
     studentData = request.json
     for item in studentData:
         studentlist = [studentData['stuName'],
-                       studentData['parEmail']
+                       studentData['parEmail'],
                        studentData['parName'],
                        studentData['score']
                        ]
