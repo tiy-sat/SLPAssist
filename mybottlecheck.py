@@ -13,6 +13,10 @@ def serve_index():
 def serve_css():
     return static_file('main.css', root='./styles')
 
+@route('/styles/main.css.map')
+def css_map():
+    return static_file('main.css.map', root='./styles')
+
 @route('/assets/SLPAssist-logo.png')
 def serve_assets():
     return static_file('SLPAssist-logo.png', root='./assets')
@@ -68,6 +72,7 @@ def stylesheets(filename):
 @route('<:re:.*/><filename:re:.*\.(jpg|png|gif|ico)>')
 def images(filename):
     return static_file(filename, root='./assets')
+
 
 if __name__ == '__main__':
     if not os.environ.get("DATABASE_URL", None):
