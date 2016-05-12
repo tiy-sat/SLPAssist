@@ -23,10 +23,7 @@ def serve_home():
 
 @post('/students')
 def add_students():
-    studentData = request.json  # .load(TextIOWrapper(request.body))
-    # studentData = request.json
-    print(type(studentData))
-    print(studentData)
+    studentData = request.json
     for item in studentData:
         studentlist = [studentData['stuName'],
                        studentData['parName'],
