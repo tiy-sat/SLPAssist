@@ -1,45 +1,47 @@
 # SLPAssist - Group Week - MVP (minimally viable product)
 # MVP
 <ul>
-  <li>Deploy to web</li>
+  <li>[x] Deploy to web</li>
     <ul>
-      <li>Domain name</li>
+      <li>[x] Domain name</li>
       <li>Host site</li>
     </ul>
-  <li>SLP role</li>
-  <li>Database</li>
-  <li>Dashboard</li>
+  <li>[x] SLP role</li>
+  <li>[x] Database</li>
+  <li>[x] Dashboard</li>
     <ul>
-      <li>List of students</li>
+      <li>[x] List of students 5/11/16</li>
+        <ul>
+          <li>[x]Student</li>
+          <li>[x] Name</li>
+          <li>[x] Single score</li>
+        </ul>
+  </ul>
+    <ul>
+      <li>[ ] Add student  - accessed on Dashboard 5/12/16</li>
     </ul>
-  <li>Student</li>
-  <li>Name</li>
-  <li>Single score</li>
+  <li>[ ] Student name</li>
+  <li>[ ] Initial score</li>
     <ul>
-      <li>Add student  - accessed on Dashboard</li>
-    </ul>
-  <li>Student name</li>
-  <li>Initial score</li>
-    <ul>
-      <li>Edit score modal - triggered by button in student area</li>
+      <li>[ ] Edit score modal - triggered by button in student area 5/13/16</li>
     </ul>
 </ul>
 # Stretch
 <ul>
-  <li>SLP login</li>
+  <li>[ ] SLP login</li>
     <ul>
-      <li>Login page</li>
-      <li>Token login (be specific if this is taken on)</li>
+      <li>[ ] Login page</li>
+      <li>[ ] Token login (be specific if this is taken on)</li>
     </ul>
-  <li>Search student</li>
+  <li>[ ] Search student</li>
 </ul>
 
 <ul>
-  <li>[ ] License information</li>
+  <li> License information</li>
     <ul>
-      <li>[ ] Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
-      <li>[ ] psycopg2: http://initd.org/psycopg/license/</li>
-      <li>[ ] bottle: http://bottlepy.org/docs/dev/index.html</li>
+      <li> Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
+      <li> psycopg2: http://initd.org/psycopg/license/</li>
+      <li> bottle: http://bottlepy.org/docs/dev/index.html</li>
     </ul>
 </ul>
 
