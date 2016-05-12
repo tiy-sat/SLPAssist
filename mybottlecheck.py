@@ -23,13 +23,16 @@ def serve_home():
 
 @post('/students')
 def add_students():
-    studentData = request.json
+    studentData = request.json  # .load(TextIOWrapper(request.body))
+    # studentData = request.json
+    print(type(studentData))
+    print(studentData)
     for item in studentData:
         studentlist = [studentData['stuName'],
                        studentData['parName'],
                        studentData['score']
                        ]
-        tablefunctions.insert_student(studentlist)
+    tablefunctions.insert_student(studentlist)
 
 
 @route('/dashboard/settings')
