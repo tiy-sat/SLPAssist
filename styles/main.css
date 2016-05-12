@@ -201,11 +201,17 @@ nav {
   padding-left: 4rem;
   text-transform: capitalize; }
 
+.dashboard__score--wrapper {
+  display: inline-block;
+  float: right;
+  padding-right: 3rem; }
+
 .dashboard__edit--score {
   color: white;
   font-size: 3rem;
   float: right;
-  margin-right: 1rem; }
+  margin-right: 1.5rem;
+  margin-bottom: 1rem; }
 
 .dashboard__student--scoreDynamic {
   color: #c03a2b;
@@ -221,9 +227,7 @@ nav {
   color: #8caaa8;
   float: right;
   font-size: 3rem;
-  font-weight: 700;
-  padding-right: 2rem;
-  padding-top: 2rem; }
+  font-weight: 700; }
 
 .dashboard__student--overview {
   background-color: #243b4f;
