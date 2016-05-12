@@ -34,14 +34,14 @@
   <li>Search student</li>
 </ul>
 
-
-    <li>[ ] License information</li>
-      <ul>
-        <li>[ ] Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
-        <li>[ ] psycopg2: http://initd.org/psycopg/license/</li>
-        <li>[ ] bottle: http://bottlepy.org/docs/dev/index.html</li>
-      </ul>
-</ol>
+<ul>
+  <li>[ ] License information</li>
+    <ul>
+      <li>[ ] Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
+      <li>[ ] psycopg2: http://initd.org/psycopg/license/</li>
+      <li>[ ] bottle: http://bottlepy.org/docs/dev/index.html</li>
+    </ul>
+</ul>
 
 
 
