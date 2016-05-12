@@ -56,19 +56,49 @@ var newStudentData = $addStudentForm.serializeObject();
 var $ = require("jquery");
 var showStudents = require("showStudents");
 var addStudent = require("addStudent");
+// var scoreColor = require("scoreColor");
+
+var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
+var $dashboardInput = $("[data-js='dashboard_input']");
+
 
 $(function(){
   // Code here!
   addStudent.expandField();
-
-
-
+  addStudent.ajaxTest();
+  showStudents.addToStudents();
 
 });
 
 },{"addStudent":1,"jquery":4,"showStudents":3}],3:[function(require,module,exports){
+var $ = require("jquery");
 
-},{}],4:[function(require,module,exports){
+var $students = $("[data-js='studentListWrapper']");
+
+this.addToStudents = function(){
+
+  $.getJSON("/students", function (dataArray){
+    dataArray.forEach(function(results){
+          $("[data-js='studentListWrapper']").prepend(`
+            <article class="dashboard__student--overview" data-js="studentOverview">
+              <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
+              <div class="dashboard__edit--score">&#9997;</div>
+                <p class="dashboard__student--scoreStatic">
+                  <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
+                </p>
+            </article>
+            `).find("[data-js='student_score']:first").toggleClass("dashboard__student--scoreDynamicGreen", results.score > 5)
+    });
+
+  });
+
+
+
+
+
+};
+
+},{"jquery":4}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/

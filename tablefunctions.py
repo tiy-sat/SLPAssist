@@ -1,4 +1,3 @@
-
 from time import strftime
 import psycopg2
 import json
@@ -48,8 +47,21 @@ def insert_student(aList):
     cur.close()
     conn.close()
 
+
+def update_score(student_id, score):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+    UPDATE students
+    set score= %s
+    where id= %s""", (score, student_id))
+    cur.commit()
+    cur.close()
+    conn.close()
+
+
 def retrieve_students():
-    keyList = ('stuName', 'parName', 'score')
+    keyList = ('id', 'stuName', 'parName', 'score')
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""SELECT * FROM students""")
@@ -60,7 +72,7 @@ def retrieve_students():
 
     studentList = []
     for row in data:
-        count = 1
+        count = 0
         valDict = {}
         for i in keyList:
             valDict[i] = row[count]

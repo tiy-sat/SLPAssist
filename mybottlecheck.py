@@ -1,5 +1,5 @@
 import os
-from bottle import route, run, template, response, request, static_file, get, post
+from bottle import route, run, template, response, request, static_file, get, post, put
 import json
 import database_setup
 import tablefunctions
@@ -29,7 +29,7 @@ def add_students():
                        studentData['parName'],
                        studentData['score']
                        ]
-        tablefunctions.insert_student(studentlist)
+    tablefunctions.insert_student(studentlist)
 
 
 @route('/dashboard/settings')
@@ -45,6 +45,14 @@ def serve_retrieve_student():
     response.content_type = 'application/json; charset=UTF-8'
     resp_data = tablefunctions.retrieve_students()
     return json.dumps(resp_data)
+
+@put('/students/<id>')
+def student_id(id):
+    studentData = request.son
+    score = studentData['score']
+    return tablefunction.update_score(score=score, id=id)
+
+
 
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941

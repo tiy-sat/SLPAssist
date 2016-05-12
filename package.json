@@ -12,6 +12,7 @@
   },
   "browser": {
    "addStudent" : "./js/add-student.js",
-   "showStudents" : "./js/show-students.js"
+   "showStudents" : "./js/show-students.js",
+   "scoreColor": "./js/score-color.js"
  }
 }
