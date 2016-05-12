@@ -42,9 +42,10 @@ this.ajaxPOST = function(){
   var newStudentData = $addStudentForm.serializeObject();
 
       $.ajax({
-        method: "POST",
+        type: "POST",
         url: "/students",
         data: JSON.stringify(newStudentData),
+        contentType: 'application/json',
         dataType: "json",
         success: function(response){
           console.log(response);
