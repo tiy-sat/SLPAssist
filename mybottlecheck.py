@@ -13,10 +13,6 @@ def serve_index():
 def serve_css():
     return static_file('main.css', root='./styles')
 
-@route('/styles/main.css.map')
-def css_map():
-    return static_file('main.css.map', root='./styles')
-
 @route('/assets/SLPAssist-logo.png')
 def serve_assets():
     return static_file('SLPAssist-logo.png', root='./assets')
