@@ -13,15 +13,19 @@
       <li>[x] List of students 5/11/16</li>
         <ul>
           <li>[x] Student</li>
-          <li>[x] Name</li>
-          <li>[x] Single score</li>
+          <ul>
+            <li>[x] Name</li>
+            <li>[x] Single score</li>
+          </ul>  
         </ul>
   </ul>
     <ul>
       <li>[ ] Add student  - accessed on Dashboard 5/12/16</li>
+      <ul>
+        <li>[ ] Student name</li>
+        <li>[ ] Initial score</li>
+      </ul>
     </ul>
-  <li>[ ] Student name</li>
-  <li>[ ] Initial score</li>
     <ul>
       <li>[ ] Edit score modal - triggered by button in student area 5/13/16</li>
     </ul>
