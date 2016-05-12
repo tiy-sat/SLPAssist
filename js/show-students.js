@@ -2,7 +2,8 @@ var $ = require("jquery");
 
 var $students = $("[data-js='studentListWrapper']");
 
-$(function(){
+this.addToStudents = function(){
+
   $.getJSON("/students", function (dataArray){
     dataArray.forEach(function(results){
           $("[data-js='studentListWrapper']").prepend(`
@@ -13,14 +14,13 @@ $(function(){
                   <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
                 </p>
             </article>
-            `)
-
-    var $score = $("[data-js='student_score']").html();
-
-      if($score > 5){
-         $("[data-js='student_score']").toggleClass("dashboard__student--scoreDynamicGreen");
-      };
-
+            `).find("[data-js='student_score']:first").toggleClass("dashboard__student--scoreDynamicGreen", results.score > 5)
     });
+
   });
-});
+
+
+
+
+
+};
