@@ -25,4 +25,3 @@ this.ajaxTest = function(){
     }
   });
 }
-  })
