@@ -45,7 +45,7 @@ this.ajaxPOST = function(){
       $.ajax({
         method: "POST",
         url: "/students",
-        data: JSON.stringify(obj),
+        data: JSON.stringify(newStudentData),
         dataType: "json",
         success: function(response){
           console.log(response);
