@@ -54,7 +54,7 @@ def insert_student(aList):
 
 
 def update_score(student_id, score):
-    conn = psycopg2.connect("dbname=slpassist user=localuser")
+    conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
     UPDATE students
