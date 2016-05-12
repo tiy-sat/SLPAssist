@@ -46,6 +46,14 @@ def serve_retrieve_student():
     resp_data = tablefunctions.retrieve_students()
     return json.dumps(resp_data)
 
+@put('/students/<id>')
+def student_id(id):
+    studentData = request.son
+    score = studentData['score']
+    return tablefunction.update_score(score=score, id=id)
+
+
+
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
 
