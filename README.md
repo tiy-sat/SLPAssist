@@ -1,24 +1,38 @@
 # SLPAssist - Group Week - MVP (minimally viable product)
 # MVP
-•	Deploy to web
-  o	Domain name
-  o	Host site
-•	SLP role
-•	Database
-•	Dashboard
-  o	List of students
-•	Student
-•	Name
-•	Single score
-  o	Add student  - accessed on Dashboard
-•	Student name
-•	Initial score
-  o	Edit score modal (triggered by button in student area)
+<ul>
+  <li>Deploy to web</li>
+    <ul>
+      <li>Domain name</li>
+      <li>Host site</li>
+    </ul>
+  <li>SLP role</li>
+  <li>Database</li>
+  <li>Dashboard</li>
+    <ul>
+      <li>List of students</li>
+    </ul>
+  <li>Student</li>
+  <li>Name</li>
+  <li>Single score</li>
+    <ul>
+      <li>Add student  - accessed on Dashboard</li>
+    </ul>
+  <li>Student name</li>
+  <li>Initial score</li>
+    <ul>
+      <li>Edit score modal - triggered by button in student area</li>
+    </ul>
+</ul>
 # Stretch
-•	SLP login
-  o	Login page
-  o	Token login (be specific if this is taken on)
-•	Search student
+<ul>
+  <li>SLP login</li>
+    <ul>
+      <li>Login page</li>
+      <li>Token login (be specific if this is taken on)</li>
+    </ul>
+  <li>Search student</li>
+</ul>
 
 
     <li>[ ] License information</li>
