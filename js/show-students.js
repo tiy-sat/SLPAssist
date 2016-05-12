@@ -15,5 +15,11 @@ $(function(){
             </article>
             `)
     });
+    $("[data-js='student_score']").each(function(){
+      if (this.val() > 5){
+        this.css("color", "$successGreen");
+      }
+
+    });
   });
 })
