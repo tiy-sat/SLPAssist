@@ -3,6 +3,7 @@ var $ = require("jquery");
 var $students = $("[data-js='studentListWrapper']");
 
 $(function(){
+
   $.getJSON("/students", function (dataArray){
     dataArray.forEach(function(results){
           $("[data-js='studentListWrapper']").prepend(`
@@ -16,4 +17,5 @@ $(function(){
             `)
     });
   });
-})
+
+});

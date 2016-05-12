@@ -1,17 +1,15 @@
 var $ = require("jquery");
 var showStudents = require("showStudents");
-
-var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
-var $dashboardInput = $("[data-js='dashboard_input']");
-
-
+var addStudent = require("addStudent");
 
 $(function(){
   // Code here!
+  addStudent.expandField();
+
+  addStudent.ajaxTest();
 
 
-  $expandAddStudent.on("click",function(e){
-    $dashboardInput.toggleClass("hide");
-  });
+
+
 
 });
