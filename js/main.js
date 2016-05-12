@@ -6,9 +6,6 @@ $(function(){
   // Code here!
   addStudent.expandField();
 
-  addStudent.ajaxTest();
-
-
 
 
 

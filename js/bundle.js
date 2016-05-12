@@ -7,40 +7,50 @@ var $emailError = ("[data-js='errorMsg']");
 
 var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
 var $dashboardInput = $("[data-js='dashboard_input']");
+var $addStudentForm = $("[data-js='add_student_form']")
+var $studentName = $("[data-js='student_name']");
+var $caregiverName = $("[data-js='caregiver_name']");
+var $caregiverEmail = $("[data-js='caregiver_email']");
+var $score = $("[data-js='score']");
+var $addStudent = $("[data-js='add_student_button']");
 
 this.expandField = function(){
   $expandAddStudent.on("click",function(e){
     $dashboardInput.toggleClass("hide");
   });
 }
+$.fn.serializeObject = function(){
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 
-this.ajaxTest = function(){
-  $.ajax({
-    method: "POST",
-    url: "/students",
-    data: { stuName: "Johnny Boston", parName: "Poppa Boston", score: 3 },
-    success: function(response){
-      console.log(response);
-    }
-  });
-}
+$addStudentForm.on("submit", function(e){
+  e.preventDefault();
 
 
+var newStudentData = $addStudentForm.serializeObject();
 
-
-// confirm that confEmail matches parEmail
-  $("[data-js='confEmail']").change(function(e){
-    console.log($(e.target).val());
-    if ($(e.target).val() != $enterEmail.val()){
-      console.log($enterEmail.val());
-      // $emailError.text = ("Please make sure caregiver email is correct");
-    }
-  //   // else {
-  //   //   $.ajax({
-  //   //
-  //   //   })
-  //   }
-  })
+    $.ajax({
+      method: "POST",
+      url: "/students",
+      data: newStudentData,
+      dataType: json,
+      success: function(response){
+        console.log(response);
+      }
+    });
+})
 
 },{"jquery":4}],2:[function(require,module,exports){
 var $ = require("jquery");
@@ -51,38 +61,14 @@ $(function(){
   // Code here!
   addStudent.expandField();
 
-  addStudent.ajaxTest();
-
-
 
 
 
 });
 
 },{"addStudent":1,"jquery":4,"showStudents":3}],3:[function(require,module,exports){
-var $ = require("jquery");
 
-var $students = $("[data-js='studentListWrapper']");
-
-$(function(){
-
-  $.getJSON("/students", function (dataArray){
-    dataArray.forEach(function(results){
-          $("[data-js='studentListWrapper']").prepend(`
-            <article class="dashboard__student--overview">
-              <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
-              <span class="dashboard__edit--score">&#9997;</span>
-                <p class="dashboard__student--scoreStatic">
-                  <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
-                </p>
-            </article>
-            `)
-    });
-  });
-
-});
-
-},{"jquery":4}],4:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
