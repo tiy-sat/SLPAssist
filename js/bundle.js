@@ -19,38 +19,41 @@ this.expandField = function(){
     $dashboardInput.toggleClass("hide");
   });
 }
-$.fn.serializeObject = function(){
-    var o = {};
-    var a = this.serializeArray();
-    $.each(a, function() {
-        if (o[this.name] !== undefined) {
-            if (!o[this.name].push) {
-                o[this.name] = [o[this.name]];
-            }
-            o[this.name].push(this.value || '');
-        } else {
-            o[this.name] = this.value || '';
+
+this.ajaxPOST = function(){
+  $.fn.serializeObject = function(){
+      var o = {};
+      var a = this.serializeArray();
+      $.each(a, function() {
+          if (o[this.name] !== undefined) {
+              if (!o[this.name].push) {
+                  o[this.name] = [o[this.name]];
+              }
+              o[this.name].push(this.value || '');
+          } else {
+              o[this.name] = this.value || '';
+          }
+      });
+      return o;
+  };
+
+  $addStudentForm.on("submit", function(e){
+    e.preventDefault();
+
+  var newStudentData = $addStudentForm.serializeObject();
+
+      $.ajax({
+        method: "POST",
+        url: "/students",
+        data: newStudentData,
+        dataType: "json",
+        success: function(response){
+          console.log(response);
         }
-    });
-    return o;
-};
+      });
+  })
 
-$addStudentForm.on("submit", function(e){
-  e.preventDefault();
-
-
-var newStudentData = $addStudentForm.serializeObject();
-
-    $.ajax({
-      method: "POST",
-      url: "/students",
-      data: newStudentData,
-      dataType: json,
-      success: function(response){
-        console.log(response);
-      }
-    });
-})
+}
 
 },{"jquery":4}],2:[function(require,module,exports){
 var $ = require("jquery");
@@ -65,7 +68,7 @@ var $dashboardInput = $("[data-js='dashboard_input']");
 $(function(){
   // Code here!
   addStudent.expandField();
-  addStudent.ajaxTest();
+  addStudent.ajaxPOST();
   showStudents.addToStudents();
 
 });
