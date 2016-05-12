@@ -12,7 +12,7 @@
     <ul>
       <li>[x] List of students 5/11/16</li>
         <ul>
-          <li>[x]Student</li>
+          <li>[x] Student</li>
           <li>[x] Name</li>
           <li>[x] Single score</li>
         </ul>
