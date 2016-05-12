@@ -76,7 +76,7 @@ def retrieve_students():
         valDict = {}
         for i in keyList:
             valDict[i] = row[count]
-            count += 0
+            count += 1
         # valDict['dateAdded'] = valDict['dateAdded'].strftime('%Y-%m-%d')
         studentList.append(valDict)
     return studentList
