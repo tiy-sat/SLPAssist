@@ -1,28 +1,71 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require("jquery");
-var showStudents = require("showStudents");
+
+var $enterEmail = ("[data-js='parEmail']");
+var $confirmEmail = ("[data-js='confEmail']");
+var $emailError = ("[data-js='errorMsg']");
 
 var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
 var $dashboardInput = $("[data-js='dashboard_input']");
 
-
-
-$(function(){
-  // Code here!
-
-
+this.expandField = function(){
   $expandAddStudent.on("click",function(e){
     $dashboardInput.toggleClass("hide");
   });
+}
+
+this.ajaxTest = function(){
+  $.ajax({
+    method: "POST",
+    url: "/students",
+    data: { stuName: "Johnny Boston", parName: "Poppa Boston", score: 3 },
+    success: function(response){
+      console.log(response);
+    }
+  });
+}
+
+
+
+
+// confirm that confEmail matches parEmail
+  $("[data-js='confEmail']").change(function(e){
+    console.log($(e.target).val());
+    if ($(e.target).val() != $enterEmail.val()){
+      console.log($enterEmail.val());
+      // $emailError.text = ("Please make sure caregiver email is correct");
+    }
+  //   // else {
+  //   //   $.ajax({
+  //   //
+  //   //   })
+  //   }
+  })
+
+},{"jquery":4}],2:[function(require,module,exports){
+var $ = require("jquery");
+var showStudents = require("showStudents");
+var addStudent = require("addStudent");
+
+$(function(){
+  // Code here!
+  addStudent.expandField();
+
+  addStudent.ajaxTest();
+
+
+
+
 
 });
 
-},{"jquery":3,"showStudents":2}],2:[function(require,module,exports){
+},{"addStudent":1,"jquery":4,"showStudents":3}],3:[function(require,module,exports){
 var $ = require("jquery");
 
 var $students = $("[data-js='studentListWrapper']");
 
 $(function(){
+
   $.getJSON("/students", function (dataArray){
     dataArray.forEach(function(results){
           $("[data-js='studentListWrapper']").prepend(`
@@ -36,9 +79,10 @@ $(function(){
             `)
     });
   });
-})
 
-},{"jquery":3}],3:[function(require,module,exports){
+});
+
+},{"jquery":4}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
@@ -9882,4 +9926,4 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}]},{},[1]);
+},{}]},{},[2]);
