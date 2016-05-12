@@ -85,10 +85,13 @@ this.addToStudents = function(){
           $("[data-js='studentListWrapper']").prepend(`
             <article class="dashboard__student--overview" data-js="studentOverview">
               <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
-              <div class="dashboard__edit--score">&#9997;</div>
-                <p class="dashboard__student--scoreStatic">
-                  <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
-                </p>
+              <div class="dashboard__score--wrapper">
+                <div class="dashboard__edit--score">&#9997;</div>
+                <br></br>
+                  <p class="dashboard__student--scoreStatic">
+                    <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
+                  </p>
+                </div>
             </article>
             `).find("[data-js='student_score']:first").toggleClass("dashboard__student--scoreDynamicGreen", results.score > 5)
     });
