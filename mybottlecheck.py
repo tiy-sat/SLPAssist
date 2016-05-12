@@ -46,12 +46,11 @@ def serve_retrieve_student():
     resp_data = tablefunctions.retrieve_students()
     return json.dumps(resp_data)
 
-@put('/students/<id>')
+@post('/students/<id>')
 def student_id(id):
-    studentData = request.son
+    studentData = request.json
     score = studentData['score']
-    return tablefunction.update_score(score=score, id=id)
-
+    return tablefunctions.update_score(score=score, student_id=id)
 
 
 # @code written by Sanketh Katta:
