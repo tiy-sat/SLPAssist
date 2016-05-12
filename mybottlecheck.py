@@ -25,7 +25,9 @@ def serve_home():
 def add_students():
     studentData = request.json
     for item in studentData:
-        studentlist = [studentData['stuName'],
+        studentlist = [
+                       studentData['stuName'],
+                       studentData['parEmail'],
                        studentData['parName'],
                        studentData['score']
                        ]
@@ -45,13 +47,6 @@ def serve_retrieve_student():
     response.content_type = 'application/json; charset=UTF-8'
     resp_data = tablefunctions.retrieve_students()
     return json.dumps(resp_data)
-
-@post('/students/<id>')
-def student_id(id):
-    studentData = request.json
-    score = studentData['score']
-    return tablefunctions.update_score(score=score, student_id=id)
-
 
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
@@ -78,10 +73,10 @@ if __name__ == '__main__':
     tablefunctions.create_table()
 
     #seeds mock student data.
-    astudent = [['Penny Tool', 'Erica Tool', 5],
-                ['Jon Yeager', 'Chuck yeager', 3],
-                ['Laura Smith', 'Sarah Smith', 7],
-                ['Ted Smosby', 'James smosby', 9]]
+    astudent = [['Penny Tool', 'Erica Tool', 'nobody@somethin.com',  5],
+                ['Jon Yeager', 'Chuck yeager', 'nobody@somethin.com', 3],
+                ['Laura Smith', 'Sarah Smith', 'nobody@somethin.com', 7],
+                ['Ted Smosby', 'James smosby', 'nobody@somethin.com', 9]]
 
     for row in astudent:
         tablefunctions.insert_student(row)
