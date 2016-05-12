@@ -16,16 +16,16 @@ this.expandField = function(){
 
 this.ajaxTest = function(){
   $.ajax({
-    method: "POST",
+    type: "POST",
     url: "/students",
-    data: { stuName: "Johnny Boston", parName: "Poppa Boston", score: 3 },
-    success: function(response){
-      console.log(response);
+    data: JSON.stringify({ stuName: "Johnny Boston", parName: "Poppa Boston", score: 3 }),
+    contentType: 'application/json',
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
     }
   });
 }
-
-
 
 
 // confirm that confEmail matches parEmail
