@@ -21,13 +21,13 @@ def serve_assets():
 def serve_home():
     return static_file('dashboard.html', root='.')
 
-@post('/students')
+@post('/dashboard')
 def add_students():
-    studentData = requests.json()
+    studentData = request.json
     for item in studentData:
-        studentlist = [studentData['stuName'],
-                       studentData['parName'],
-                       studentData['score']
+        studentlist = [studentData[0]['stuName'],
+                       studentData[0]['parName'],
+                       studentData[0]['score']
                        ]
         tablefunctions.insert_student(studentlist)
 
