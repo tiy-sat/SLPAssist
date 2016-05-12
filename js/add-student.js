@@ -25,18 +25,4 @@ this.ajaxTest = function(){
     }
   });
 }
-
-
-// confirm that confEmail matches parEmail
-  $("[data-js='confEmail']").change(function(e){
-    console.log($(e.target).val());
-    if ($(e.target).val() != $enterEmail.val()){
-      console.log($enterEmail.val());
-      // $emailError.text = ("Please make sure caregiver email is correct");
-    }
-  //   // else {
-  //   //   $.ajax({
-  //   //
-  //   //   })
-  //   }
   })

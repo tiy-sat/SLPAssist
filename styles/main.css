@@ -212,6 +212,11 @@ nav {
   font-size: 3rem;
   font-weight: 700; }
 
+.dashboard__student--scoreDynamicGreen {
+  color: #4fba6f;
+  font-size: 3rem;
+  font-weight: 700; }
+
 .dashboard__student--scoreStatic {
   color: #8caaa8;
   float: right;
