@@ -10,7 +10,6 @@ var $dashboardInput = $("[data-js='dashboard_input']");
 $(function(){
   // Code here!
   addStudent.expandField();
-
   addStudent.ajaxTest();
   showStudents.addToStudents();
 
