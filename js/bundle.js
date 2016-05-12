@@ -1,1 +1,1 @@
-console.error("Error: Parsing file /Users/iamriah/git/SPLAssist/SPLAssist/js/add-student.js: Unexpected token (27:2)");
+console.error("Error: Parsing file /Users/iamriah/git/SPLAssist/SPLAssist/js/add-student.js: Unexpected token (28:2)");

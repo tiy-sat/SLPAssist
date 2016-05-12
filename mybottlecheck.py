@@ -29,7 +29,7 @@ def add_students():
                        studentData['parName'],
                        studentData['score']
                        ]
-        tablefunctions.insert_student(studentlist)
+    tablefunctions.insert_student(studentlist)
 
 
 @route('/dashboard/settings')
