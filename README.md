@@ -1,35 +1,26 @@
 # SLPAssist - Group Week - MVP (minimally viable product)
-<ol>
-  <li>[ ] database to store values</li>
-  <li>[ ] front page when logged in</li>
-  <li>[ ] login page</li>
-  <li>[ ] front page when not logged in</li>
-  <li>[ ] dashboard</li>
-    <ul>
-      <li>[ ] list of students</li>
-      <li>[ ] student info</li>
-        <ol>
-          <li>name</li>
-          <li>graph</li>
-          <li>action</li>
-        </ol>
-    </ul>  
-    <li>[ ] role SLP</li>  
-  <li>[ ] user settings page</li>
-    <ul>
-      <li>[ ] edit SLP profile page</li>
-    </ul>
-  <li>[ ] notification for SLP token login process</li>
-  <li>[ ] student details</li>
-    <ul>
-      <li>[ ] capturing student goal data</li>
-      <li>[ ] graduate student</li>
-    </ul>
-  <li>[ ] deploy to web</li>
-    <ul>
-      <li>[x] domain name</li>
-      <li>[x] host</li>
-    </ul>
+# MVP
+•	Deploy to web
+  o	Domain name
+  o	Host site
+•	SLP role
+•	Database
+•	Dashboard
+  o	List of students
+•	Student
+•	Name
+•	Single score
+  o	Add student  - accessed on Dashboard
+•	Student name
+•	Initial score
+  o	Edit score modal (triggered by button in student area)
+# Stretch
+•	SLP login
+  o	Login page
+  o	Token login (be specific if this is taken on)
+•	Search student
+
+
     <li>[ ] License information</li>
       <ul>
         <li>[ ] Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
@@ -38,8 +29,7 @@
       </ul>
 </ol>
 
-# SPLAssist
-Repository for SPLA web app
+
 
 ## Running Python locally (for AJAX dev)
 - `$ python3 mybottlecheck.py` (will start local instance of python webserver and tell you what URL to see this in chrome, _should_ be *0.0.0.0:5000*)
