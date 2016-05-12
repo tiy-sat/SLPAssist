@@ -13,6 +13,7 @@ def create_table():
     ID SERIAL PRIMARY KEY,
     stuName VARCHAR(100),
     parName VARCHAR(100),
+    parEmail VARCHAR(250),
     score SMALlINT
     )
     """)
@@ -41,8 +42,9 @@ def insert_student(aList):
     cur.execute("""
     INSERT INTO students(stuName,
                          parName,
+                         parEmail,
                          score)
-          VALUES (%s, %s, %s)""", aList)
+          VALUES (%s, %s, %s, %s)""", aList)
     conn.commit()
     cur.close()
     conn.close()
@@ -61,7 +63,7 @@ def update_score(student_id, score):
 
 
 def retrieve_students():
-    keyList = ('id', 'stuName', 'parName', 'score')
+    keyList = ('id', 'stuName', 'parName', 'parEmail', 'score')
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""SELECT * FROM students""")
@@ -80,6 +82,10 @@ def retrieve_students():
         # valDict['dateAdded'] = valDict['dateAdded'].strftime('%Y-%m-%d')
         studentList.append(valDict)
     return studentList
+
+# test student
+# aStudent = ['Penny Tool', 'Mamma Tool', 8]
+
 
 # test student
 # aStudent = ['Penny Tool', 'Mamma Tool', 8]
