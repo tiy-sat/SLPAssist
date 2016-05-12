@@ -55,7 +55,7 @@ def update_score(student_id, score):
     UPDATE students
     set score= %s
     where id= %s""", (score, student_id))
-    cur.commit()
+    conn.commit()
     cur.close()
     conn.close()
 
