@@ -14,5 +14,7 @@ $(function(){
   showStudents.addToStudents();
   modal.openModal();
   modal.closeModal();
+  modal.updateScore();
+  modal.ajaxUpdate();
 
 });
