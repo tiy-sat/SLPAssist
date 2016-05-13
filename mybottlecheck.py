@@ -35,8 +35,8 @@ def add_users():
     userList = [userData['slpName'],
                 userData['username'],
                 userData['slpemail'],
-                userData['password'],
-                         'slp']
+                               'slp',
+                userData['password']]
 
     tablefunctions.insert_user(userList)
 
@@ -96,7 +96,7 @@ if __name__ == '__main__':
                 ['Laura Smith', 'Sarah Smith', 'nobody@gmail.com', 7],
                 ['Ted Smosby', 'James smosby', 'nobody@gmail.com', 9]]
 
-    auser = ['jimmy', '@admin',  'admin', 'nobody@swbell.net', 'password']
+    auser = ['jimmy', '@admin', 'nobody@swbell.net', 'admin' 'password']
 
     for row in astudent:
         tablefunctions.insert_student(row)

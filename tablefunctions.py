@@ -70,15 +70,16 @@ def insert_student(aList):
 
 
 def insert_user(aList):
-    #hash function could be called here. 
+    #hash function could be called here.
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
     INSERT INTO users(slpName,
                       userName,
                       slpEmail,
-                      password,
-                      user_type)
+                      user_type,
+                      password
+                      )
          Values (%s, %s, %s, %s, %s)""", aList, )
     conn.commit()
     cur.close()
