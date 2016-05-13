@@ -9,10 +9,6 @@ import tablefunctions
 def serve_index():
     return static_file('index.html', root='.')
 
-@route('/styles/main.css')
-def serve_css():
-    return static_file('main.css', root='./styles')
-
 @route('/assets/SLPAssist-logo.png')
 def serve_assets():
     return static_file('SLPAssist-logo.png', root='./assets')
@@ -32,6 +28,9 @@ def add_students():
                        ]
     tablefunctions.insert_student(studentlist)
 
+@route('/create-account')
+def serve_createAccount():
+    return static_file('create-account.html', root='.')
 
 @route('/dashboard/settings')
 def serve_settings():
@@ -52,7 +51,6 @@ def student_id(id):
     studentData = request.json
     score = studentData['score']
     return tablefunctions.update_score(score=score, student_id=id)
-
 
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
