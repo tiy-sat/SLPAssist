@@ -39,20 +39,22 @@ this.ajaxPOST = function(){
 
   $addStudentForm.on("submit", function(e){
     e.preventDefault();
+    location.reload(true);
+    $dashboardInput.toggleClass("hide");
 
-  var newStudentData = $addStudentForm.serializeObject();
+    var newStudentData = $addStudentForm.serializeObject();
 
-      $.ajax({
-        type: "POST",
-        url: "/students",
-        data: JSON.stringify(newStudentData),
-        contentType: 'application/json',
-        dataType: "json",
-        success: function(response){
+        $.ajax({
+          type: "POST",
+          url: "/students",
+          data: JSON.stringify(newStudentData),
+          contentType: 'application/json',
+          dataType: "json",
+          success: function(response){
           console.log(response);
-        }
-      });
-  })
+          }
+        });
+    })
 
 }
 
@@ -73,6 +75,8 @@ $(function(){
   showStudents.addToStudents();
   modal.openModal();
   modal.closeModal();
+  modal.updateScore();
+  modal.ajaxUpdate();
 
 });
 
@@ -83,11 +87,19 @@ var $editScore = $("[data-js='edit_score']");
 var $students = $("[data-js='studentListWrapper']");
 var $cancelModal = $("[data-js='modal_close']");
 var $modal = $("[data-js='modal']");
+var $studentID = $("[data-id='${results.id}']");
+var $modalHeading = $("[data-js='modal_heading']");
+var $revisedScore = $("[data-js='revised_score']");
+var $insertScore = $("[data-js='insert_score']");
+var $dataID = $();
+var $newScore = $();
 
 this.openModal = function(){
-
-  $students.on("click", $("[data-js='edit_score']"), function(e){
+  $students.on("click", $("[data-id='${results.id}']"), function(e){
     $modal.toggleClass("modal__hide");
+    // $modal.html("set " + results.name + "'s score");
+    $dataID = $(e.target).attr("data-id");
+    console.log($dataID);
 
   })
 }
@@ -100,10 +112,40 @@ this.closeModal = function(){
   })
 }
 
+this.updateScore = function(){
+  $modal.on("click", $("[data-js='revised_score']"), function(e){
+    $newScore = $(e.target).attr("data-counter");
+    console.log($newScore);
+  })
+}
+
+this.ajaxUpdate = function(){
+
+  $insertScore.on("click", function(e){
+    e.preventDefault();
+    $modal.toggleClass("modal__hide");
+    var newScoreData = {id:$dataID, score:$newScore};
+
+        $.ajax({
+          type: "POST",
+          url: "/students/" + $dataID,
+          data: JSON.stringify(newScoreData),
+          contentType: 'application/json',
+          dataType: "json",
+          success: function(response){
+            //update score
+            console.log(response);
+          }
+        });
+    })
+
+}
+
 },{"jquery":5}],4:[function(require,module,exports){
 var $ = require("jquery");
 
 var $students = $("[data-js='studentListWrapper']");
+
 
 this.addToStudents = function(){
 
@@ -113,15 +155,20 @@ this.addToStudents = function(){
             <article class="dashboard__student--overview" data-js="studentOverview">
               <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
               <div class="dashboard__score--wrapper">
-                <i class="dashboard__edit--score" data-js="edit_score">&#9997;</i>
+                <i class="dashboard__edit--score" data-id="${results.id}">&#9997;</i>
                 <br></br>
                   <p class="dashboard__student--scoreStatic">
                     <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
                   </p>
                 </div>
-            </article>
+
+
+              </article>
             `).find("[data-js='student_score']:first").toggleClass("dashboard__student--scoreDynamicGreen", results.score > 5)
+            var $results = results
+            // console.log($results.id);
     });
+
 
   });
 

@@ -38,19 +38,21 @@ this.ajaxPOST = function(){
 
   $addStudentForm.on("submit", function(e){
     e.preventDefault();
+    location.reload(true);
+    $dashboardInput.toggleClass("hide");
 
-  var newStudentData = $addStudentForm.serializeObject();
+    var newStudentData = $addStudentForm.serializeObject();
 
-      $.ajax({
-        type: "POST",
-        url: "/students",
-        data: JSON.stringify(newStudentData),
-        contentType: 'application/json',
-        dataType: "json",
-        success: function(response){
+        $.ajax({
+          type: "POST",
+          url: "/students",
+          data: JSON.stringify(newStudentData),
+          contentType: 'application/json',
+          dataType: "json",
+          success: function(response){
           console.log(response);
-        }
-      });
-  })
+          }
+        });
+    })
 
 }
