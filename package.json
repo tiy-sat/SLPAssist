@@ -13,6 +13,7 @@
   "browser": {
    "addStudent" : "./js/add-student.js",
    "showStudents" : "./js/show-students.js",
-   "scoreColor": "./js/score-color.js"
+   "scoreColor": "./js/score-color.js",
+   "modal":"./js/modal.js"
  }
 }
