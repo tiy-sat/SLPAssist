@@ -92,23 +92,21 @@ nav {
 .form__title {
   font-size: 5rem;
   color: #2980ba;
-  text-align: center; }
+  text-align: center;
+  margin: 1.5rem; }
 
-.add-form-wrapper {
+.form-wrapper {
   background-color: #ecf0f1;
   margin: 0 auto;
   font-size: 4.5rem;
   width: 90%; }
-
-.add-student-form {
-  display: block; }
 
 .form__text {
   color: #2c3e50;
   font-weight: 300;
   margin-bottom: 0.5rem; }
 
-.add-form__input {
+.form__input {
   display: block;
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -116,7 +114,7 @@ nav {
   position: relative;
   width: 100%; }
 
-.submit__add-student {
+.submit__button {
   background-color: #2980ba;
   border: 0;
   color: #ecf0f1;
@@ -252,7 +250,7 @@ nav {
   font-weight: 300;
   margin-bottom: 0.5rem; }
 
-.add-form__input {
+.form__input {
   display: block;
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -260,7 +258,7 @@ nav {
   position: relative;
   width: 100%; }
 
-.submit__add-student {
+.submit__button {
   background-color: #2980ba;
   border: 0;
   color: #ecf0f1;
