@@ -2,6 +2,7 @@ from time import strftime
 import psycopg2
 import json
 from database_setup import get_connection
+import hash_functions
 
 def create_table():
     conn = get_connection()
@@ -70,7 +71,7 @@ def insert_student(aList):
 
 
 def insert_user(aList):
-    #hash function could be called here.
+    hash_functions.hash_pswd(aList)
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
@@ -80,7 +81,7 @@ def insert_user(aList):
                       user_type,
                       password
                       )
-         Values (%s, %s, %s, %s, %s)""", aList, )
+         Values (%s, %s, %s, %s, %s)""", aList)
     conn.commit()
     cur.close()
     conn.close()

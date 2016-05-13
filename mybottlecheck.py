@@ -96,7 +96,7 @@ if __name__ == '__main__':
                 ['Laura Smith', 'Sarah Smith', 'nobody@gmail.com', 7],
                 ['Ted Smosby', 'James smosby', 'nobody@gmail.com', 9]]
 
-    auser = ['jimmy', '@admin', 'nobody@swbell.net', 'admin' 'password']
+    auser = ['jimmy', '@admin', 'nobody@swbell.net', 'admin', 'password']
 
     for row in astudent:
         tablefunctions.insert_student(row)
