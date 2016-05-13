@@ -29,9 +29,9 @@ def create_user_table():
     (
      ID Serial Primary Key,
      slpName VARCHAR(100),
-     username VARCHAR(100),
-     slpemail VARCHAR(255),
-     type VARCHAR(100),
+     userName VARCHAR(100),
+     slpEmail VARCHAR(255),
+     user_type VARCHAR(100),
      password VARCHAR(255)
     )
     """)
@@ -67,16 +67,19 @@ def insert_student(aList):
     cur.close()
     conn.close()
 
+
+
 def insert_user(aList):
+    #hash function could be called here. 
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
     INSERT INTO users(slpName,
-                      username,
-                      type,
-                      slpemail,
-                      password)
-         Values (%s, %s, %s, %s, %s)""", aList)
+                      userName,
+                      slpEmail,
+                      password,
+                      user_type)
+         Values (%s, %s, %s, %s, %s)""", aList, )
     conn.commit()
     cur.close()
     conn.close()

@@ -28,6 +28,20 @@ def add_students():
                        ]
     tablefunctions.insert_student(studentlist)
 
+@post('/users')
+def add_users():
+    userData = request.json
+    #Hash function could be called here
+    userList = [userData['slpName'],
+                userData['username'],
+                userData['slpemail'],
+                userData['password'],
+                         'slp']
+
+    tablefunctions.insert_user(userList)
+
+
+
 @route('/create-account')
 def serve_createAccount():
     return static_file('create-account.html', root='.')
@@ -83,10 +97,6 @@ if __name__ == '__main__':
                 ['Ted Smosby', 'James smosby', 'nobody@gmail.com', 9]]
 
     auser = ['jimmy', '@admin',  'admin', 'nobody@swbell.net', 'password']
-
-
-
-
 
     for row in astudent:
         tablefunctions.insert_student(row)
