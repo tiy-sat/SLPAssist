@@ -31,7 +31,8 @@ def create_user_table():
      slpName VARCHAR(100),
      username VARCHAR(100),
      slpemail VARCHAR(255),
-     password VARCHAR(100)
+     type VARCHAR(100),
+     password VARCHAR(255)
     )
     """)
     conn.commit()
@@ -72,9 +73,10 @@ def insert_user(aList):
     cur.execute("""
     INSERT INTO users(slpName,
                       username,
+                      type,
                       slpemail,
                       password)
-         Values (%s, %s, %s, %s)""", aList)
+         Values (%s, %s, %s, %s, %s)""", aList)
     conn.commit()
     cur.close()
     conn.close()
