@@ -75,15 +75,20 @@ if __name__ == '__main__':
         database_setup.create_database()
 
     tablefunctions.create_table()
-
+    tablefunctions.create_user_table()
     #seeds mock student data.
     astudent = [['Penny Tool', 'Erica Tool', 'nobody@gmail.com', 5],
                 ['Jon Yeager', 'Chuck yeager', 'nobody@gmail.com', 3],
                 ['Laura Smith', 'Sarah Smith', 'nobody@gmail.com', 7],
                 ['Ted Smosby', 'James smosby', 'nobody@gmail.com', 9]]
 
+    auser = ['jimmy', 'admin', 'asdG@LKG.com', 'password']
+
     for row in astudent:
         tablefunctions.insert_student(row)
+
+
+    tablefunctions.insert_user(auser)
 
     # Calls to create the tables go here.
 
