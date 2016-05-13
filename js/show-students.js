@@ -10,7 +10,7 @@ this.addToStudents = function(){
             <article class="dashboard__student--overview" data-js="studentOverview">
               <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
               <div class="dashboard__score--wrapper">
-                <div class="dashboard__edit--score">&#9997;</div>
+                <i class="dashboard__edit--score" data-js="edit_score">&#9997;</i>
                 <br></br>
                   <p class="dashboard__student--scoreStatic">
                     <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10

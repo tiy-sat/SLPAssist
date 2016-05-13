@@ -56,11 +56,11 @@ this.ajaxPOST = function(){
 
 }
 
-},{"jquery":4}],2:[function(require,module,exports){
+},{"jquery":5}],2:[function(require,module,exports){
 var $ = require("jquery");
 var showStudents = require("showStudents");
 var addStudent = require("addStudent");
-// var scoreColor = require("scoreColor");
+var modal = require("modal");
 
 var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
 var $dashboardInput = $("[data-js='dashboard_input']");
@@ -71,10 +71,36 @@ $(function(){
   addStudent.expandField();
   addStudent.ajaxPOST();
   showStudents.addToStudents();
+  modal.openModal();
+  modal.closeModal();
 
 });
 
-},{"addStudent":1,"jquery":4,"showStudents":3}],3:[function(require,module,exports){
+},{"addStudent":1,"jquery":5,"modal":3,"showStudents":4}],3:[function(require,module,exports){
+var $ = require("jquery");
+
+var $editScore = $("[data-js='edit_score']");
+var $students = $("[data-js='studentListWrapper']");
+var $cancelModal = $("[data-js='modal_close']");
+var $modal = $("[data-js='modal']");
+
+this.openModal = function(){
+
+  $students.on("click", $("[data-js='edit_score']"), function(e){
+    $modal.toggleClass("modal__hide");
+
+  })
+}
+
+this.closeModal = function(){
+
+  $cancelModal.on("click", function(e){
+    $modal.toggleClass("modal__hide");
+
+  })
+}
+
+},{"jquery":5}],4:[function(require,module,exports){
 var $ = require("jquery");
 
 var $students = $("[data-js='studentListWrapper']");
@@ -87,7 +113,7 @@ this.addToStudents = function(){
             <article class="dashboard__student--overview" data-js="studentOverview">
               <h3 class="dashboard__student--name" data-js="student_name">${results.stuName}</h3>
               <div class="dashboard__score--wrapper">
-                <div class="dashboard__edit--score">&#9997;</div>
+                <i class="dashboard__edit--score" data-js="edit_score">&#9997;</i>
                 <br></br>
                   <p class="dashboard__student--scoreStatic">
                     <span class="dashboard__student--scoreDynamic" data-js="student_score">${results.score}</span>/10
@@ -105,7 +131,7 @@ this.addToStudents = function(){
 
 };
 
-},{"jquery":4}],4:[function(require,module,exports){
+},{"jquery":5}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/

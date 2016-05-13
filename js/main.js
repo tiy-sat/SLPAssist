@@ -1,7 +1,7 @@
 var $ = require("jquery");
 var showStudents = require("showStudents");
 var addStudent = require("addStudent");
-// var scoreColor = require("scoreColor");
+var modal = require("modal");
 
 var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
 var $dashboardInput = $("[data-js='dashboard_input']");
@@ -12,5 +12,7 @@ $(function(){
   addStudent.expandField();
   addStudent.ajaxPOST();
   showStudents.addToStudents();
+  modal.openModal();
+  modal.closeModal();
 
 });
