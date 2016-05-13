@@ -209,7 +209,11 @@ nav {
   font-size: 3rem;
   float: right;
   margin-right: 1.5rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  cursor: pointer; }
+
+.dashboard__edit--score:hover {
+  color: #3b97d3; }
 
 .dashboard__student--scoreDynamic {
   color: #c03a2b;
@@ -619,5 +623,76 @@ dl.csslinegraph {
   font-size: 0;
   margin: 0 auto;
   width: 90%; }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.modal__heading {
+  color: white;
+  font-size: 7rem;
+  font-weight: 500;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  text-transform: capitalize; }
+
+.modal__score--list {
+  color: #2980ba;
+  display: block;
+  font-size: 0rem;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-bottom: 7rem;
+  text-align: center;
+  width: 90%; }
+
+.modal__score {
+  background-color: white;
+  border-radius: 5rem;
+  display: inline-block;
+  font-size: 6rem;
+  padding: 1rem;
+  width: 10%; }
+
+.modal__score:hover {
+  color: #464646; }
+
+.modal__buttons {
+  width: 75%;
+  margin: 0 auto; }
+
+.modal__score--submit {
+  background-color: #3b97d3;
+  border: 0;
+  color: white;
+  display: inline-block;
+  float: right;
+  font-size: 5rem;
+  margin: 0 auto;
+  outline: 0;
+  padding: 2rem;
+  text-align: center;
+  width: 40%; }
+
+.modal__close {
+  background-color: #8caaa8;
+  border: 0;
+  color: white;
+  display: inline-block;
+  float: left;
+  font-size: 5rem;
+  margin: 0 auto;
+  outline: 0;
+  padding: 2rem;
+  text-align: center;
+  width: 40%; }
+
+.modal__hide {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
