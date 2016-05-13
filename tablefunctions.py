@@ -20,6 +20,24 @@ def create_table():
     conn.commit()
     cur.close()
 
+def create_user_table():
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""DROP TABLE IF EXISTS users""")
+    cur.execute("""
+    CREATE TABLE users
+    (
+     ID Serial Primary Key,
+     slpName VARCHAR(100),
+     username VARCHAR(100),
+     slpemail VARCHAR(255),
+     type VARCHAR(100),
+     password VARCHAR(255)
+    )
+    """)
+    conn.commit()
+    cur.close()
+
 def delete_table():
     conn = get_connection()
     cur = conn.cursor()
@@ -49,6 +67,19 @@ def insert_student(aList):
     cur.close()
     conn.close()
 
+def insert_user(aList):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+    INSERT INTO users(slpName,
+                      username,
+                      type,
+                      slpemail,
+                      password)
+         Values (%s, %s, %s, %s, %s)""", aList)
+    conn.commit()
+    cur.close()
+    conn.close()
 
 def update_score(student_id, score):
     conn = get_connection()
