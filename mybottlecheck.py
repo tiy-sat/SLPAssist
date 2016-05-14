@@ -53,6 +53,39 @@ def student_id(id):
     score = studentData['score']
     return tablefunctions.update_score(score=score, student_id=id)
 
+@put('/login')
+def log_user_in():
+    bottle.request.environ.get('beaker.session')
+    username = request.forms.get('username')
+    password = request.forms.get('password')
+    user_id = check_login(username, password)
+    if user_id:
+        s['user_id'] = user_id
+        response.set_cookie("account", username, secret='some-secret-key')
+        s.save()
+        return("<p><p>Welcome {{name}}! You are now logged in.</p></p>",
+            name=username
+            )
+    else:
+        return "<p>Login failed.</p>"
+
+@post('/login')
+def login():
+    return """
+        <form action="/login" method="post">
+            Username: <input name="username" type="text" />
+            Password: <input name="password" type="password" />
+            <input value="Login" type="submit" />
+        </form>
+        """
+
+@post('/logout')
+def log_user_out():
+    s = bottle.request.environ.get('beaker.session')
+    del s['user_id']
+    s.save()
+
+
 
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
