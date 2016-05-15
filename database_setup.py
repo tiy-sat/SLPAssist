@@ -5,6 +5,7 @@ import getpass
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from urllib.parse import urlparse
 
+#connects to heroku or local psql database. 
 def get_connection():
     localuser = getpass.getuser()
     db_url = os.environ.get("DATABASE_URL", None)
