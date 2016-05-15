@@ -43,9 +43,19 @@
 <ul>
   <li> License information</li>
     <ul>
+      <h3>Back-end software</h3>
       <li> Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
       <li> psycopg2: http://initd.org/psycopg/license/</li>
       <li> bottle: http://bottlepy.org/docs/dev/index.html</li>
+      <h3>Front-end software</h3>
+      <li> Javascript: https://www.mozilla.org/en-US/foundation/licensing/</li>
+      <li> JQuery: https://www.tldrlegal.com/l/cc0-1.0</li>
+      <li> SASS: http://sass-lang.com/documentation/file.MIT-LICENSE.html</li>
+      <li> HTML, CSS: https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document</li>
+      <li> Browserify: https://github.com/substack/node-browserify/blob/master/LICENSE</li>
+      <li> Node JS: https://raw.githubusercontent.com/nodejs/node/master/LICENSE</li>
+      <li> Brew: https://github.com/Homebrew/legacy-homebrew/blob/master/LICENSE.txt</li>
+
     </ul>
 </ul>
 

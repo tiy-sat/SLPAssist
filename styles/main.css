@@ -264,7 +264,9 @@ nav {
 
 .submit__button {
   background-color: #2980ba;
-  border: 0;
+  border: none;
+  -webkit-border: none;
+  -moz-border: none;
   color: #ecf0f1;
   font-size: 4.5rem;
   left: 33%;
@@ -272,7 +274,10 @@ nav {
   margin-bottom: 4rem;
   padding: 1rem;
   position: relative;
-  width: 33%; }
+  width: 33%;
+  appearance: none;
+  -webkit-appearanc: none;
+  -moz-appearance: none; }
 
 .hide {
   display: none; }
