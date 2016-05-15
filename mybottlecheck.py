@@ -4,10 +4,19 @@ import json
 import database_setup
 import tablefunctions
 
+# Web functions
 @route('/')
 @route('/login')
 def serve_index():
     return static_file('index.html', root='.')
+
+@route('/login_page')
+def serve_login_page():
+    return static_file('login.html', root='.')
+
+@route('/create-account')
+def serve_add_student():
+    return static_file('create-account.html', root='.')
 
 @route('/styles/main.css')
 def serve_css():
@@ -20,18 +29,6 @@ def serve_assets():
 @get('/dashboard')
 def serve_home():
     return static_file('dashboard.html', root='.')
-
-@post('/students')
-def add_students():
-    studentData = request.json
-    for item in studentData:
-        studentlist = [studentData['stuName'],
-                       studentData['parEmail'],
-                       studentData['parName'],
-                       studentData['score']
-                       ]
-    tablefunctions.insert_student(studentlist)
-
 
 @route('/dashboard/settings')
 def serve_settings():
@@ -46,6 +43,18 @@ def serve_retrieve_student():
     response.content_type = 'application/json; charset=UTF-8'
     resp_data = tablefunctions.retrieve_students()
     return json.dumps(resp_data)
+
+# API functions
+@post('/students')
+def add_students():
+    studentData = request.json
+    for item in studentData:
+        studentlist = [studentData['stuName'],
+                       studentData['parEmail'],
+                       studentData['parName'],
+                       studentData['score']
+                       ]
+    tablefunctions.insert_student(studentlist)
 
 @post('/students/<id>')
 def student_id(id):

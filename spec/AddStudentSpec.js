@@ -1,6 +1,8 @@
 describe("AddStudent", function(){
   var AddStudent = require("../lib/addStudent");
 
+  var $dashboardInput = $("[data-js='dashboard_input']");
+
   var addStudent;
 
   beforeEach(function(){
@@ -8,7 +10,6 @@ describe("AddStudent", function(){
   });
 
   it("should be hidden by default", function(){
-    expect(modal.isOpen).toBe(false);
+    expect($dashboardInput).toBeHidden();
   });
-
 })
