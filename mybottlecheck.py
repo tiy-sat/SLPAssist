@@ -4,10 +4,23 @@ import json
 import database_setup
 import tablefunctions
 
+# Web functions
 @route('/')
 @route('/login')
 def serve_index():
     return static_file('index.html', root='.')
+
+@route('/login_page')
+def serve_login_page():
+    return static_file('login.html', root='.')
+
+@route('/create-account')
+def serve_add_student():
+    return static_file('create-account.html', root='.')
+
+@route('/styles/main.css')
+def serve_css():
+    return static_file('main.css', root='./styles')
 
 @route('/assets/SLPAssist-logo.png')
 def serve_assets():
@@ -16,6 +29,21 @@ def serve_assets():
 @get('/dashboard')
 def serve_home():
     return static_file('dashboard.html', root='.')
+
+@route('/dashboard/settings')
+def serve_settings():
+    return static_file('settings.html', root='.')
+
+@route('/add-student')
+def serve_add_student():
+    return static_file('add-student.html', root='.')
+
+# API functions
+@route('/students')
+def serve_retrieve_student():
+    response.content_type = 'application/json; charset=UTF-8'
+    resp_data = tablefunctions.retrieve_students()
+    return json.dumps(resp_data)
 
 @post('/students')
 def add_students():
@@ -40,31 +68,22 @@ def add_users():
 
     tablefunctions.insert_user(userList)
 
-
-
-@route('/create-account')
-def serve_createAccount():
-    return static_file('create-account.html', root='.')
-
-@route('/dashboard/settings')
-def serve_settings():
-    return static_file('settings.html', root='.')
-
-@route('/add-student')
-def serve_add_student():
-    return static_file('add-student.html', root='.')
-
-@route('/students')
-def serve_retrieve_student():
-    response.content_type = 'application/json; charset=UTF-8'
-    resp_data = tablefunctions.retrieve_students()
-    return json.dumps(resp_data)
-
 @post('/students/<id>')
 def student_id(id):
     studentData = request.json
     score = studentData['score']
     return tablefunctions.update_score(score=score, student_id=id)
+
+#########################################################
+@route('/login', method='POST')
+def do_login():
+    username = request.forms.get('username')
+    password = request.forms.get('password')
+    if username and password:
+        return serve_home()
+    else:
+        return "<p>Login failed.</p>"
+#########################################################
 
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
