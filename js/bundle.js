@@ -83,10 +83,11 @@ var $dataID = $();
 var $newScore = $();
 
 // constructor code
-function Modal(){
+function Modal(showStudents){
   var modal = this;
+  modal.showStudents = showStudents
   modal.selector = "[data-js='modal']";
-  
+
   modal.openModal = function(){
     $students.on("click", $("[data-id='${results.id}']"), function(e){
       $modal.toggleClass("modal__hide");
@@ -128,8 +129,10 @@ function Modal(){
             success: function(response){
               //update score
               console.log(response);
+
             }
           });
+          location.reload(true);
       })
 
   }

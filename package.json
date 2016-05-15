@@ -15,6 +15,7 @@
 
    "addStudent" : "./lib/AddStudent.js",
    "showStudents" : "./lib/ShowStudents.js",
-   "modal":"./lib/Modal.js"
+   "modal":"./lib/Modal.js",
+   "login":"./lib/Login.js"
  }
 }
