@@ -45,7 +45,7 @@ function AddStudent(){
 
     $addStudentForm.on("submit", function(e){
       e.preventDefault();
-      // location.reload(true);
+      location.reload(true);
       $dashboardInput.toggleClass("hide");
 
       var newStudentData = $addStudentForm.serializeObject();
@@ -62,7 +62,6 @@ function AddStudent(){
 
         }
       })
-      location.reload(true);
     });
   }
 }
@@ -84,11 +83,10 @@ var $dataID = $();
 var $newScore = $();
 
 // constructor code
-function Modal(showStudents){
+function Modal(){
   var modal = this;
-  modal.showStudents = showStudents
   modal.selector = "[data-js='modal']";
-
+  
   modal.openModal = function(){
     $students.on("click", $("[data-id='${results.id}']"), function(e){
       $modal.toggleClass("modal__hide");
@@ -130,10 +128,8 @@ function Modal(showStudents){
             success: function(response){
               //update score
               console.log(response);
-
             }
           });
-          location.reload(true);
       })
 
   }
