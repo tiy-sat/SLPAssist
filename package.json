@@ -12,6 +12,7 @@
     "jquery": "^2.2.3"
   },
   "browser": {
+
    "addStudent" : "./lib/AddStudent.js",
    "showStudents" : "./lib/ShowStudents.js",
    "modal":"./lib/Modal.js"
