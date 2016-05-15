@@ -38,6 +38,11 @@ def serve_settings():
 def serve_add_student():
     return static_file('add-student.html', root='.')
 
+@route('/students')
+def serve_retrieve_student():
+    response.content_type = 'application/json; charset=UTF-8'
+    resp_data = tablefunctions.retrieve_students()
+    return json.dumps(resp_data)
 
 # API functions
 @post('/students')
