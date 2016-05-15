@@ -1,6 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var $ = require("jquery");
-
 var $enterEmail = ("[data-js='parEmail']");
 var $confirmEmail = ("[data-js='confEmail']");
 var $emailError = ("[data-js='errorMsg']");
@@ -68,9 +66,7 @@ function AddStudent(){
 module.exports = AddStudent;
 // necessary or ability to call constructor
 
-},{"jquery":5}],2:[function(require,module,exports){
-var $ = require("jquery");
-
+},{}],2:[function(require,module,exports){
 var $editScore = $("[data-js='edit_score']");
 var $students = $("[data-js='studentListWrapper']");
 var $cancelModal = $("[data-js='modal_close']");
@@ -141,9 +137,7 @@ function Modal(showStudents){
 module.exports = Modal;
 // necessary or ability to call constructor
 
-},{"jquery":5}],3:[function(require,module,exports){
-var $ = require("jquery");
-
+},{}],3:[function(require,module,exports){
 var $students = $("[data-js='studentListWrapper']");
 
 //constructor code
@@ -174,7 +168,7 @@ function ShowStudents(){
 module.exports = ShowStudents;
 // necessary for ability to call constructor
 
-},{"jquery":5}],4:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var $ = require("jquery");
 var ShowStudents = require("../lib/showStudents");
 var AddStudent = require("../lib/addStudent");

@@ -9,13 +9,19 @@
   },
   "dependencies": {
     "jasmine": "^2.4.1",
+    "jasmine-jquery": "^2.1.1",
     "jquery": "^2.2.3"
   },
+  "devDependencies": {
+    "jsdom": "^9.1.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine-html-reporter": "^0.2.0"
+  },
   "browser": {
-
-   "addStudent" : "./lib/AddStudent.js",
-   "showStudents" : "./lib/ShowStudents.js",
-   "modal":"./lib/Modal.js",
-   "login":"./lib/Login.js"
- }
+    "addStudent": "./lib/AddStudent.js",
+    "showStudents": "./lib/ShowStudents.js",
+    "modal": "./lib/Modal.js",
+    "login": "./lib/Login.js"
+  }
 }
