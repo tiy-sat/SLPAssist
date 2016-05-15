@@ -5,9 +5,11 @@ import database_setup
 import tablefunctions
 
 @route('/')
-@route('/login')
 def serve_index():
     return static_file('index.html', root='.')
+@rout('/login')
+def serve_login():
+    return static_file('login.html', root='.')
 
 @route('/assets/SLPAssist-logo.png')
 def serve_assets():
