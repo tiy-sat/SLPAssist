@@ -62,6 +62,26 @@ def student_id(id):
     score = studentData['score']
     return tablefunctions.update_score(score=score, student_id=id)
 
+#########################################################
+# @route('/login_page')
+# def login():
+#     return '''
+#         <form action="/login_page" method="post">
+#             Username: <input name="username" type="text" />
+#             Password: <input name="password" type="password" />
+#             <input value="Login" type="submit" />
+#         </form>
+#     '''
+
+@route('/login', method='POST')
+def do_login():
+    username = request.forms.get('username')
+    password = request.forms.get('password')
+    if username and password:
+        return serve_home()
+    else:
+        return "<p>Login failed.</p>"
+#########################################################
 
 # @code written by Sanketh Katta:
 # http://stackoverflow.com/questions/10486224/bottle-static-files/13258941#13258941
