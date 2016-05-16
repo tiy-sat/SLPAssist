@@ -159,8 +159,6 @@ function ShowStudents(){
               `).find("[data-js='student_score']:first").toggleClass("dashboard__student--scoreDynamicGreen", results.score > 5)
               var $results = results
 
-              console.log(results.length);
-
       });
 
     });
