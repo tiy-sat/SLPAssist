@@ -119,6 +119,23 @@ def retrieve_students():
         studentList.append(valDict)
     return studentList
 
+def retrieve_password(aName):
+    keyList = ('id', 'stuName', 'parName', 'parEmail', 'score')
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""SELECT password FROM users WHERE username=%s""", [aName])
+    pswdHash = cur.fetchone()
+    conn.commit()
+    cur.close()
+    conn.close()
+    if pswdHash == None:
+        return pswdHash
+    else:
+        return pswdHash[0]
+
+# print(retrieve_password('theboss'))
+# print(retrieve_password('jimturbo'))
+
 # test student
 # aStudent = ['Penny Tool', 'Mamma Tool', 8]
 

@@ -3,6 +3,8 @@ from bottle import route, run, template, response, request, static_file, get, po
 import json
 import database_setup
 import tablefunctions
+from passlib.hash import sha512_crypt
+
 
 # Web functions
 @route('/')
@@ -75,14 +77,26 @@ def student_id(id):
     return tablefunctions.update_score(score=score, student_id=id)
 
 #########################################################
-@route('/login', method='POST')
+@post('/login')
 def do_login():
+    # bottle.request.environ.get('beaker.session')
     username = request.forms.get('username')
     password = request.forms.get('password')
-    if username and password:
+    if tablefunctions.retrieve_password(username) == None:
+        return "<p>Username or password is not correct.</p>"
+    elif sha512_crypt.verify(password, tablefunctions.retrieve_password(username)):
+        # s['user_id'] = True
+        # response.set_cookie("account", username, secret='some-secret-key')
+        # s.save()
         return serve_home()
     else:
-        return "<p>Login failed.</p>"
+        return "<p>Username or password is not correct.</p>"
+
+# @post('/logout')
+# def log_user_out():
+#     s = bottle.request.environ.get('beaker.session')
+#     del s['user_id']
+#     s.save()
 #########################################################
 
 # @code written by Sanketh Katta:
@@ -115,7 +129,7 @@ if __name__ == '__main__':
                 ['Laura Smith', 'Sarah Smith', 'nobody@gmail.com', 7],
                 ['Ted Smosby', 'James smosby', 'nobody@gmail.com', 9]]
 
-    auser = ['jimmy', '@admin', 'nobody@swbell.net', 'admin', 'password']
+    auser = ['Bruce Springsteen', 'theboss', 'nobody@swbell.net', 'admin', 'estreet']
 
     for row in astudent:
         tablefunctions.insert_student(row)
