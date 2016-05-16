@@ -38,6 +38,7 @@
       <li>[ ] Token login (be specific if this is taken on)</li>
     </ul>
   <li>[ ] Search student</li>
+  <li>[ ] Multiple scores and data visualization </li>
 </ul>
 
 <ul>

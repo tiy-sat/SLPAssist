@@ -59,6 +59,7 @@ function AddStudent(showStudents){
 
         }
       })
+      location.reload(true);
     });
   }
 }
@@ -66,6 +67,58 @@ module.exports = AddStudent;
 // necessary or ability to call constructor
 
 },{}],2:[function(require,module,exports){
+var $signUp = $("[data-js='create-account-form']");
+
+// constructor code
+function CreateAccount(){
+
+  var createAccount = this;
+
+
+
+  createAccount.ajaxPOST = function(){
+    $.fn.serializeObject = function(){
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+
+    $signUp.on("submit", function(e, response){
+      e.preventDefault();
+
+      var newAccountData = $signUp.serializeObject();
+      console.log(newAccountData);
+      $.ajax({
+        type: "POST",
+        url: "/users",
+        data: JSON.stringify(newAccountData),
+        contentType: 'application/json',
+        dataType: "json",
+        success: function(response){
+          console.log(response)
+
+
+        }
+      })
+
+    });
+  }
+}
+module.exports = CreateAccount;
+// necessary or ability to call constructor
+
+},{}],3:[function(require,module,exports){
 var $editScore = $("[data-js='edit_score']");
 var $students = $("[data-js='studentListWrapper']");
 var $cancelModal = $("[data-js='modal_close']");
@@ -136,7 +189,7 @@ function Modal(showStudents){
 module.exports = Modal;
 // necessary or ability to call constructor
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var $students = $("[data-js='studentListWrapper']");
 
 //constructor code
@@ -167,11 +220,12 @@ function ShowStudents(){
 module.exports = ShowStudents;
 // necessary for ability to call constructor
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var $ = require("jquery");
 var ShowStudents = require("../lib/showStudents");
 var AddStudent = require("../lib/addStudent");
 var Modal = require("../lib/modal");
+var CreateAccount = require("../lib/createAccount")
 
 var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
 var $dashboardInput = $("[data-js='dashboard_input']");
@@ -181,8 +235,10 @@ $(function(){
   // Code here!
 
   var showStudents = new ShowStudents();
-  var modal = new Modal(showStudents);
-  var addStudent = new AddStudent(showStudents);
+
+  var modal = new Modal();
+  var addStudent = new AddStudent();
+  var createAccount = new CreateAccount();
 
   addStudent.expandField();
   addStudent.ajaxPOST();
@@ -190,10 +246,11 @@ $(function(){
   modal.closeModal();
   modal.updateScore();
   modal.ajaxUpdate();
+  createAccount.ajaxPOST();
 
 });
 
-},{"../lib/addStudent":1,"../lib/modal":2,"../lib/showStudents":3,"jquery":5}],5:[function(require,module,exports){
+},{"../lib/addStudent":1,"../lib/createAccount":2,"../lib/modal":3,"../lib/showStudents":4,"jquery":6}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
@@ -10037,4 +10094,4 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}]},{},[4]);
+},{}]},{},[5]);

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Add a student</title>
+    <title>Create your SLPAssist account</title>
     <link rel="stylesheet" href="styles/main.css" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   </head>
@@ -12,13 +12,15 @@
       <h2 class="form__title">CREATE AN ACCOUNT</h2>
     </header>
     <main class="form-wrapper">
-      <form class="create-account-form" action="/dashboard" method="post">
+      
+      <form class="create-account-form" action="#" method="post" data-js="create-account-form">
+
         <h3 class="create-form__text"></h3>
           <input class="form__input" data-js="slpName" type="text" name="slpName" value="" placeholder="Full Name">
           <input class="form__input" data-js="userName" type="text" name="userName" value="" placeholder="User Name">
           <input class="form__input" data-js="slpEmail" type="email" name="slpEmail" value="" placeholder="Email Address">
-          <input class="form__input" data-js="phoneNum" type="text" name="password" value="" placeholder="Password">
-        <input class="submit__button" data-js="createButton" type="button" name="submit" value="SIGN UP">
+          <input class="form__input" data-js="password" type="password" name="password" value="" placeholder="Password">
+        <input class="submit__button" data-js="createButton" type="submit" name="submit" value="SIGN UP">
       </form>
     </main>
 
