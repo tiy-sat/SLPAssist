@@ -70,8 +70,6 @@ module.exports = AddStudent;
 // necessary or ability to call constructor
 
 },{"jquery":6}],2:[function(require,module,exports){
-var $ = require("jquery");
-
 var $signUp = $("[data-js='create-account-form']");
 
 // constructor code
@@ -123,7 +121,7 @@ function CreateAccount(){
 module.exports = CreateAccount;
 // necessary or ability to call constructor
 
-},{"jquery":6}],3:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var $ = require("jquery");
 
 var $editScore = $("[data-js='edit_score']");
