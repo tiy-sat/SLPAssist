@@ -10,9 +10,10 @@ from passlib.hash import sha512_crypt
 @route('/')
 def serve_index():
     return static_file('index.html', root='.')
-@rout('/login')
-def serve_login():
-    return static_file('login.html', root='.')
+
+# @route('/login')
+# def serve_login():
+#     return static_file('login.html', root='.')
 
 @route('/login_page')
 def serve_login_page():
