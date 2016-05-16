@@ -12,10 +12,6 @@ from beaker.middleware import SessionMiddleware
 def serve_index():
     return static_file('index.html', root='.')
 
-# @route('/login')
-# def serve_login():
-#     return static_file('login.html', root='.')
-
 @route('/login_page')
 def serve_login_page():
     return static_file('login.html', root='.')
@@ -51,6 +47,10 @@ def serve_retrieve_student():
     resp_data = tablefunctions.retrieve_students()
     return json.dumps(resp_data)
 
+<<<<<<< HEAD
+# API functions
+=======
+>>>>>>> b5fe5d09d48778d344f86cbba721e0cb2759f085
 @post('/students')
 def add_students():
     studentData = request.json
@@ -62,6 +62,8 @@ def add_students():
                        ]
     tablefunctions.insert_student(studentlist)
 
+<<<<<<< HEAD
+=======
 @post('/users')
 def add_users():
     userData = request.json
@@ -74,6 +76,7 @@ def add_users():
 
     tablefunctions.insert_user(userList)
 
+>>>>>>> b5fe5d09d48778d344f86cbba721e0cb2759f085
 @post('/students/<id>')
 def student_id(id):
     studentData = request.json
