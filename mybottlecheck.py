@@ -3,6 +3,7 @@ from bottle import route, run, template, response, request, static_file, get, po
 import json
 import database_setup
 import tablefunctions
+from beaker.middleware import SessionMiddleware
 
 @route('/')
 @route('/login')
