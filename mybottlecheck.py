@@ -8,9 +8,11 @@ from passlib.hash import sha512_crypt
 
 # Web functions
 @route('/')
-@route('/login')
 def serve_index():
     return static_file('index.html', root='.')
+@rout('/login')
+def serve_login():
+    return static_file('login.html', root='.')
 
 @route('/login_page')
 def serve_login_page():
@@ -63,8 +65,8 @@ def add_users():
     userData = request.json
     #Hash function could be called here
     userList = [userData['slpName'],
-                userData['username'],
-                userData['slpemail'],
+                userData['userName'],
+                userData['slpEmail'],
                                'slp',
                 userData['password']]
 
