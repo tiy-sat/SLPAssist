@@ -4,6 +4,7 @@ import json
 import database_setup
 import tablefunctions
 from passlib.hash import sha512_crypt
+from beaker.middleware import SessionMiddleware
 
 
 # Web functions
@@ -95,11 +96,11 @@ def do_login():
     else:
         return "<p>Username or password is not correct.</p>"
 
-# @post('/logout')
-# def log_user_out():
-#     s = bottle.request.environ.get('beaker.session')
-#     del s['user_id']
-#     s.save()
+ @post('/logout')
+ def log_user_out():
+     s = bottle.request.environ.get('beaker.session')
+     del s['user_id']
+     s.save()
 #########################################################
 
 # @code written by Sanketh Katta:
