@@ -42,6 +42,7 @@
 
 <ul>
   <li> License information</li>
+  <li> Multiple scores and data visualization </li>
     <ul>
       <h3>Back-end software</h3>
       <li> Python: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release</li>
