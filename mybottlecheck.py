@@ -56,9 +56,9 @@ def student_id(id):
 @put('/login')
 def log_user_in():
     bottle.request.environ.get('beaker.session')
-    username = request.forms.get('username')
+    username = request.forms.get('userName')
     password = request.forms.get('password')
-    user_id = check_login(username, password)
+    user_id = check_login(userName, password)
     if user_id:
         s['user_id'] = user_id
         response.set_cookie("account", username, secret='some-secret-key')
@@ -73,7 +73,7 @@ def log_user_in():
 def login():
     return """
         <form action="/login" method="post">
-            Username: <input name="username" type="text" />
+            Username: <input name="userName" type="text" />
             Password: <input name="password" type="password" />
             <input value="Login" type="submit" />
         </form>
