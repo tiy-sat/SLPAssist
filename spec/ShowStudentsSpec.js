@@ -12,8 +12,9 @@ describe("ShowStudents", function(){
     $ = require('jquery');
   });
 
-  it("should produce an array of objects", function(){
-    expect($results).toBe(true);
+  it("should show green if score is greater than 5", function(){
+    expect($("[data-js='student_score']"), results.score > 5).toHaveClass("dashboard__student--scoreDynamicGreen");
+
   });
 
 });

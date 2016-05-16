@@ -11,8 +11,8 @@ describe("Modal", function(){
     $ = require('jquery');
   });
 
-  it("should produce an array of objects", function(){
-    expect($results).toBe(true);
+  it("should be in DOM when page loads", function(){
+    expect($("[data-js='revised_score']")).toBeInDOM()
   });
 
 });

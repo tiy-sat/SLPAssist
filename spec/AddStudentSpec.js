@@ -1,7 +1,7 @@
 describe("AddStudent", function(){
   var AddStudent = require("../lib/addStudent");
   var jsdom = require("jsdom");
-  
+
   var $dashboardInput = $("[data-js='dashboard_input']");
 
   var addStudent;

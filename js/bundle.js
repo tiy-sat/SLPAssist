@@ -1,8 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var $enterEmail = ("[data-js='parEmail']");
-var $confirmEmail = ("[data-js='confEmail']");
-var $emailError = ("[data-js='errorMsg']");
-
 var $expandAddStudent = $("[data-js='dashboard_expandAddStudent']");
 var $dashboardInput = $("[data-js='dashboard_input']");
 var $addStudentForm = $("[data-js='add_student_form']")
@@ -12,9 +8,12 @@ var $caregiverEmail = $("[data-js='caregiver_email']");
 var $score = $("[data-js='score']");
 var $addStudent = $("[data-js='add_student_button']");
 
-// constructor code
-function AddStudent(){
+var $enterEmail = ("[data-js='parEmail']");
+var $confirmEmail = ("[data-js='confEmail']");
+var $emailError = ("[data-js='errorMsg']");
 
+// constructor code
+function AddStudent(showStudents){
   var addStudent = this;
 
   addStudent.expandField = function(){
@@ -81,7 +80,7 @@ var $newScore = $();
 // constructor code
 function Modal(showStudents){
   var modal = this;
-  modal.showStudents = showStudents
+  modal.showStudents = showStudents;
   modal.selector = "[data-js='modal']";
 
   modal.openModal = function(){
@@ -160,6 +159,8 @@ function ShowStudents(){
               `).find("[data-js='student_score']:first").toggleClass("dashboard__student--scoreDynamicGreen", results.score > 5)
               var $results = results
 
+              console.log(results.length);
+
       });
 
     });
@@ -182,8 +183,8 @@ $(function(){
   // Code here!
 
   var showStudents = new ShowStudents();
-  var modal = new Modal();
-  var addStudent = new AddStudent();
+  var modal = new Modal(showStudents);
+  var addStudent = new AddStudent(showStudents);
 
   addStudent.expandField();
   addStudent.ajaxPOST();

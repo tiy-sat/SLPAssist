@@ -11,8 +11,8 @@ describe("Login", function(){
     $ = require('jquery');
   });
 
-  it("should be hidden by default", function(){
-    expect(modal.isOpen).toBe(false);
+  it("should handle form submission", function(){
+    expect($loginForm).toHandle("submit")
   });
 
 })
